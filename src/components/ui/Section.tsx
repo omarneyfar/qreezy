@@ -18,7 +18,7 @@ const Section: React.FC<SectionProps> = ({ children, id, className = "", dark = 
                 className
             )}
         >
-            <div className="container mx-auto px-6 md:px-8">
+            <div className="container">
                 {children}
             </div>
         </section>

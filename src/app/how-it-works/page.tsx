@@ -1,10 +1,14 @@
-"use client";
-
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTA from "@/components/ui/CTA";
 import { ClipboardList, Code, MapPin, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Comment ça marche",
+    description: "Découvrez comment nous intégrons les outils Qreezy dans votre entreprise, de l'audit au lancement.",
+};
 
 export default function HowItWorks() {
     const steps = [

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -7,6 +5,12 @@ import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import { Button } from "@/components/ui/button";
 import { Smartphone, BarChart3, Mail, Lock, Heart, ArrowRight } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Qreezy Fidélité",
+    description: "Transformez les clients occasionnels en habitués fidèles avec un programme de fidélité numérique optimisé pour mobile.",
+};
 
 export default function FidelityPage() {
     const steps = [
