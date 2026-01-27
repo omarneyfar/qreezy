@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import Button from "@/components/ui/Button";
-import { Camera, Zap, Layout, Tag, Coffee, GlassWater, Utensils, Hotel } from "lucide-react";
+import { Camera, Zap, Layout, Tag, Coffee, GlassWater, Utensils, Hotel, CheckCircle2, Sparkles } from "lucide-react";
 
 export default function DigitalMenuPage() {
     return (
@@ -55,19 +55,19 @@ export default function DigitalMenuPage() {
                     <div className="benefit-column">
                         <h3 className="benefit-title">Pour Votre Entreprise</h3>
                         <ul className="benefit-list">
-                            <li>✅ <span>Zéro frais de réimpression</span></li>
-                            <li>✅ <span>Efficacité opérationnelle accrue</span></li>
-                            <li>✅ <span>Image de marque moderne</span></li>
-                            <li>✅ <span>Données sur les plats populaires</span></li>
+                            <li><CheckCircle2 size={20} className="text-primary" /> <span>Zéro frais de réimpression</span></li>
+                            <li><CheckCircle2 size={20} className="text-primary" /> <span>Efficacité opérationnelle accrue</span></li>
+                            <li><CheckCircle2 size={20} className="text-primary" /> <span>Image de marque moderne</span></li>
+                            <li><CheckCircle2 size={20} className="text-primary" /> <span>Données sur les plats populaires</span></li>
                         </ul>
                     </div>
                     <div className="benefit-column">
                         <h3 className="benefit-title">Pour Vos Clients</h3>
                         <ul className="benefit-list">
-                            <li>✨ <span>Expérience sans contact</span></li>
-                            <li>✨ <span>Pas d'attente pour le menu</span></li>
-                            <li>✨ <span>Images claires et précises</span></li>
-                            <li>✨ <span>Filtrage facile (allergènes)</span></li>
+                            <li><Sparkles size={20} className="text-primary" /> <span>Expérience sans contact</span></li>
+                            <li><Sparkles size={20} className="text-primary" /> <span>Pas d'attente pour le menu</span></li>
+                            <li><Sparkles size={20} className="text-primary" /> <span>Images claires et précises</span></li>
+                            <li><Sparkles size={20} className="text-primary" /> <span>Filtrage facile (allergènes)</span></li>
                         </ul>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const Footer = () => {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "3rem", marginBottom: "4rem" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                         <Link href="/">
-                            <Image src="/logo.png" alt="Qreezy Logo" width={100} height={35} style={{ objectFit: "contain" }} />
+                            <Image src="/logo-header.png" alt="Qreezy Logo" width={100} height={35} style={{ objectFit: "contain" }} />
                         </Link>
                         <p style={{ fontSize: "0.95rem" }}>{SITE_CONFIG.tagline}</p>
                     </div>

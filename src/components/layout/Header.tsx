@@ -48,7 +48,7 @@ const Header = () => {
             >
                 <div className="container" style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <Link href="/" onClick={closeMobileMenu} style={{ display: "flex", alignItems: "center", zIndex: 1001, position: "relative" }}>
-                        <Image src="/logo.png" alt="Qreezy Logo" width={120} height={40} style={{ objectFit: "contain" }} priority />
+                        <Image src="/logo-header.png" alt="Qreezy Logo" width={120} height={40} style={{ objectFit: "contain" }} priority />
                     </Link>
 
                     {/* Desktop Navigation */}
