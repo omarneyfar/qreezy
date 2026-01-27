@@ -6,6 +6,7 @@ import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import ClientCard from "@/components/ui/ClientCard";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 import { Clock, TrendingDown, FileText, Smartphone, Utensils, Star } from "lucide-react";
 
 export default function Home() {
@@ -13,24 +14,55 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Section className="hero">
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "3rem",
-          alignItems: "center",
-          paddingTop: "2rem"
-        }} className="hero-grid">
-          <div style={{ textAlign: "center" }}>
-            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", marginBottom: "1.5rem", lineHeight: "1.1" }}>
-              Solutions QR Modernes pour <span className="text-primary">Votre Entreprise</span>
+        <div className="hero-container">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              La Nouvelle Ère du <br />
+              <span className="text-primary">Commerce Connecté</span>
             </h1>
-            <p style={{ fontSize: "1.25rem", marginBottom: "2.5rem", maxWidth: "800px", margin: "0 auto 2.5rem" }}>
-              Boostez votre restaurant ou commerce avec Menu Digital et Qreezy Fidélité.
-              Simplifiez les interactions et fidélisez vos clients grâce à une technologie intelligente.
+
+            <p className="hero-description">
+              Propulsez votre établissement vers le futur. Simplifiez vos opérations,
+              enchantez vos clients et boostez votre rentabilité avec nos solutions QR intelligentes.
             </p>
-            <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <Button href="/devis">Commencer Maintenant</Button>
-              <Button href="/comment-ca-marche" variant="outline">Découvrir le Fonctionnement</Button>
+
+            <div className="hero-actions">
+              <Button href="/devis" className="hero-btn-primary">Commencer Maintenant</Button>
+              <Button href="/comment-ca-marche" variant="outline">Découvrir</Button>
+            </div>
+
+            {/* Trust Signals */}
+            <div className="hero-trust">
+              <div className="trust-item">
+                <span className="trust-number">+50</span>
+                <span className="trust-label">Établissements</span>
+              </div>
+              <div className="divider"></div>
+              <div className="trust-item">
+                <span className="trust-number">4.9/5</span>
+                <span className="trust-label">Note Client</span>
+              </div>
+              <div className="divider"></div>
+              <div className="trust-item">
+                <span className="trust-number">7j/7</span>
+                <span className="trust-label">Support</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-image-container">
+            {/* Main Logo Display */}
+            <div className="logo-wrapper">
+              <Image
+                src="/logo.png"
+                alt="Qreezy Logo"
+                width={300}
+                height={67}
+                sizes="(max-width: 360px) 100px, (max-width: 480px) 140px, (max-width: 640px) 200px, (max-width: 1024px) 180px, 400px"
+                className="logo-image"
+                style={{ objectFit: "contain", height: "auto" }}
+                priority
+              />
             </div>
           </div>
         </div>
@@ -42,28 +74,24 @@ export default function Home() {
           title="Les Défis des Entreprises"
           subtitle="Les méthodes traditionnelles vous ralentissent. Nous vous aidons à surmonter les obstacles courants."
         />
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "2rem"
-        }}>
+        <div className="problems-grid">
           <FeatureCard
-            icon={<Clock size={24} />}
+            icon={<Clock size={28} />}
             title="Service Lent"
             description="L'attente des menus physiques ou les enregistrements manuels frustrent les clients et limitent votre capacité."
           />
           <FeatureCard
-            icon={<TrendingDown size={24} />}
+            icon={<TrendingDown size={28} />}
             title="Faible Fréquentation"
             description="Sans connexion numérique, il est difficile d'encourager les clients à revenir pour leur prochaine visite."
           />
           <FeatureCard
-            icon={<FileText size={24} />}
+            icon={<FileText size={28} />}
             title="Contenu Statique"
             description="L'impression de nouveaux menus ou cartes de fidélité à chaque changement de prix est coûteuse et polluante."
           />
           <FeatureCard
-            icon={<Smartphone size={24} />}
+            icon={<Smartphone size={28} />}
             title="Fossé Numérique"
             description="Vous manquez des données clients précieuses et la commodité d'une expérience optimisée pour mobile."
           />
@@ -76,22 +104,31 @@ export default function Home() {
           title="Nos Solutions"
           subtitle="Deux outils puissants conçus pour fonctionner ensemble ou indépendamment pour développer votre activité."
         />
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "3rem"
-        }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", padding: "2rem", borderRadius: "12px", border: "1px solid var(--border)" }}>
-            <div className="text-primary"><Utensils size={48} /></div>
-            <h3 style={{ fontSize: "1.75rem" }}>Menu Digital</h3>
-            <p>Transformez l'expérience culinaire de votre restaurant avec un menu numérique rapide, beau et interactif. Mettez à jour vos plats instantanément.</p>
-            <Button href="/menu-digital" variant="secondary">Explorer Menu Digital</Button>
+        <div className="solutions-grid">
+          <div className="solution-card">
+            <div className="solution-icon">
+              <Utensils size={48} strokeWidth={1.5} />
+            </div>
+            <h3 className="solution-title">Menu Digital</h3>
+            <p className="solution-description">
+              Transformez l'expérience culinaire de votre restaurant avec un menu numérique rapide, beau et interactif. Mettez à jour vos plats instantanément.
+            </p>
+            <div className="solution-action">
+              <Button href="/menu-digital" variant="secondary">Explorer Menu Digital</Button>
+            </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", padding: "2rem", borderRadius: "12px", border: "1px solid var(--border)" }}>
-            <div className="text-primary"><Star size={48} /></div>
-            <h3 style={{ fontSize: "1.75rem" }}>Qreezy Fidélité</h3>
-            <p>Créez une communauté fidèle avec un programme de fidélité numérique. Récompensez vos meilleurs clients et incitez-les à revenir.</p>
-            <Button href="/qreezy-fidelite" variant="secondary">Explorer Fidélité</Button>
+
+          <div className="solution-card">
+            <div className="solution-icon">
+              <Star size={48} strokeWidth={1.5} />
+            </div>
+            <h3 className="solution-title">Qreezy Fidélité</h3>
+            <p className="solution-description">
+              Créez une communauté fidèle avec un programme de fidélité numérique. Récompensez vos meilleurs clients et incitez-les à revenir.
+            </p>
+            <div className="solution-action">
+              <Button href="/qreezy-fidelite" variant="secondary">Explorer Fidélité</Button>
+            </div>
           </div>
         </div>
       </Section>
@@ -102,11 +139,7 @@ export default function Home() {
           title="Approuvé par des Professionnels"
           subtitle="Découvrez comment nos partenaires utilisent les outils Qreezy au quotidien."
         />
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "2rem"
-        }}>
+        <div className="clients-grid">
           <ClientCard
             clientName="L'Artiste Bistro"
             usageDescription="Menu Digital a réduit nos temps d'attente de 15% et nous permet de mettre à jour nos suggestions du jour sans frais d'impression."
@@ -127,6 +160,396 @@ export default function Home() {
           buttonLink="/devis"
         />
       </Section>
+
+      <style jsx>{`
+        /* Hero Section Styles */
+        .hero-container {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 4rem;
+          align-items: center;
+          padding: 1rem 0 4rem;
+          min-height: calc(100vh - var(--header-height));
+        }
+
+        .hero-content {
+          text-align: left;
+        }
+
+        .hero-title {
+          font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+          margin-bottom: 1.75rem;
+          line-height: 1.1;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          color: var(--foreground);
+        }
+
+        .hero-description {
+          font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+          margin-bottom: 2.75rem;
+          max-width: 620px;
+          color: var(--text-secondary);
+          line-height: 1.7;
+        }
+
+        .hero-actions {
+          display: flex;
+          gap: 1.25rem;
+          margin-bottom: 3.5rem;
+          flex-wrap: wrap;
+        }
+
+        .hero-trust {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .trust-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .trust-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--primary);
+        }
+
+        .trust-label {
+          font-size: 0.875rem;
+          color: var(--text-secondary);
+          font-weight: 500;
+        }
+
+        .divider {
+          width: 1px;
+          height: 40px;
+          background-color: var(--border);
+        }
+
+        .hero-image-container {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+
+        .logo-wrapper {
+          padding: 2.5rem 3rem;
+          background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+          border-radius: 24px;
+          box-shadow: 
+            0 15px 40px rgba(239, 111, 96, 0.06),
+            0 5px 15px rgba(0, 0, 0, 0.03);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          animation: float 6s ease-in-out infinite;
+          max-width: 500px;
+          width: 100%;
+          border: 1px solid rgba(239, 111, 96, 0.08);
+        }
+
+        .logo-image {
+          width: 100%;
+          max-width: 200px;
+        }
+
+        @keyframes float {
+          0%, 100% { 
+            transform: translateY(0px) rotate(0deg); 
+          }
+          50% { 
+            transform: translateY(-12px) rotate(0.5deg); 
+          }
+        }
+
+        /* Problems Grid Styles */
+        .problems-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+          margin-top: 1rem;
+        }
+
+        /* Solutions Grid Styles */
+        .solutions-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 3rem;
+          margin-top: 1rem;
+        }
+
+        .solution-card {
+          display: flex;
+          flex-direction: column;
+          gap: 1.75rem;
+          padding: 3rem 2.5rem;
+          border-radius: 20px;
+          border: 1px solid var(--border);
+          background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+          transition: all 0.3s ease;
+          cursor: default;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .solution-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary), #ff8a80);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .solution-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+          border-color: var(--primary);
+        }
+
+        .solution-card:hover::before {
+          opacity: 1;
+        }
+
+        .solution-icon {
+          color: var(--primary);
+          display: inline-flex;
+          padding: 1rem;
+          background: rgba(239, 111, 96, 0.1);
+          border-radius: 16px;
+          width: fit-content;
+        }
+
+        .solution-title {
+          font-size: 1.85rem;
+          font-weight: 700;
+          margin: 0;
+          color: var(--foreground);
+        }
+
+        .solution-description {
+          font-size: 1.05rem;
+          line-height: 1.7;
+          color: var(--text-secondary);
+          flex: 1;
+        }
+
+        .solution-action {
+          margin-top: auto;
+        }
+
+        /* Clients Grid Styles */
+        .clients-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2.5rem;
+          margin-top: 1rem;
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+          .hero-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 3.5rem;
+            min-height: auto;
+          }
+
+          .hero-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .hero-image-container {
+            justify-content: center;
+            order: -1;
+          }
+
+          .hero-actions {
+            justify-content: center;
+          }
+
+          .hero-trust {
+            justify-content: center;
+          }
+
+          .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .logo-wrapper {
+            max-width: 500px;
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+          }
+
+          .logo-image {
+            max-width: 160px;
+          }
+
+          .trust-number {
+            font-size: 1.35rem;
+          }
+
+          .divider {
+            height: 35px;
+          }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+          .problems-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .solutions-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .solution-card {
+            padding: 2.5rem 2rem;
+            gap: 1.5rem;
+          }
+
+          .solution-title {
+            font-size: 1.65rem;
+          }
+
+          .solution-description {
+            font-size: 1rem;
+          }
+
+          .solution-icon {
+            padding: 0.875rem;
+          }
+
+          .clients-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-container {
+            padding: 1rem 0 2rem;
+            gap: 2.5rem;
+          }
+
+          .hero-title {
+            margin-bottom: 1.25rem;
+          }
+
+          .hero-description {
+            margin-bottom: 2rem;
+          }
+
+          .hero-actions {
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+          }
+
+          .hero-actions :global(a),
+          .hero-actions :global(button) {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .hero-trust {
+            gap: 1.25rem;
+          }
+
+          .trust-number {
+            font-size: 1.25rem;
+          }
+
+          .trust-label {
+            font-size: 0.8rem;
+          }
+
+          .divider {
+            height: 30px;
+          }
+
+          .logo-wrapper {
+            padding: 1.75rem 2rem;
+            border-radius: 18px;
+            max-width: 260px;
+          }
+
+          .logo-image {
+            max-width: 140px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-trust {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            width: 100%;
+          }
+
+          .trust-item {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+          }
+
+          .divider {
+            display: none;
+          }
+
+          .solution-card {
+            padding: 2rem 1.5rem;
+          }
+
+          .solution-action :global(a),
+          .solution-action :global(button) {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .logo-wrapper {
+            max-width: 100%;
+            padding: 1.5rem 1.75rem;
+            border-radius: 16px;
+          }
+
+          .logo-image {
+            max-width: 120px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .logo-wrapper {
+            padding: 1.25rem 1.5rem;
+          }
+
+          .logo-image {
+            max-width: 100px;
+          }
+
+          .hero-container {
+            padding: 0.5rem 0 1.5rem;
+          }
+        }
+      `}</style>
     </>
   );
 }
