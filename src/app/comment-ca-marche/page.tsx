@@ -3,28 +3,29 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTA from "@/components/ui/CTA";
+import { ClipboardList, Code, MapPin, Rocket } from "lucide-react";
 
 export default function HowItWorks() {
     const steps = [
         {
             title: "Consultation & Audit",
-            description: "We analyze your business needs, menu structure, or loyalty goals to design the perfect QR setup.",
-            icon: "📋"
+            description: "Nous analysons vos besoins, la structure de votre menu ou vos objectifs de fidélisation.",
+            icon: <ClipboardList size={32} />
         },
         {
-            title: "Digital Integration",
-            description: "Our team digitizes your menu or configures your fidelity program onto the Qreezy platform.",
-            icon: "💻"
+            title: "Intégration Digitale",
+            description: "Notre équipe numérise votre menu ou configure votre programme sur la plateforme Qreezy.",
+            icon: <Code size={32} />
         },
         {
-            title: "QR Code Deployment",
-            description: "We provide high-quality, branded QR materials for your tables, checkout, or marketing collateral.",
-            icon: "🖼️"
+            title: "Déploiement des Codes QR",
+            description: "Nous fournissons des supports QR de haute qualité pour vos tables ou votre comptoir.",
+            icon: <MapPin size={32} />
         },
         {
-            title: "Launch & Support",
-            description: "Go live! We provide staff training and ongoing technical support to ensure smooth operations.",
-            icon: "🚀"
+            title: "Lancement & Support",
+            description: "C'est parti ! Nous formons votre personnel et assurons un support technique continu.",
+            icon: <Rocket size={32} />
         }
     ];
 
@@ -32,8 +33,8 @@ export default function HowItWorks() {
         <>
             <Section>
                 <SectionHeader
-                    title="Simple Implementation"
-                    subtitle="How we bring Qreezy tools to your business, from initial contact to successful launch."
+                    title="Une Mise en Place Simple"
+                    subtitle="Comment nous intégrons les outils Qreezy dans votre entreprise, de l'audit au lancement."
                 />
 
                 <div style={{ maxWidth: "900px", margin: "4rem auto 0", display: "flex", flexDirection: "column", gap: "4rem" }}>
@@ -53,13 +54,12 @@ export default function HowItWorks() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                fontSize: "2.5rem",
                             }}>
                                 {step.icon}
                             </div>
                             <div style={{ flex: 1 }}>
                                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.5rem" }}>
-                                    <span style={{ fontWeight: "700", color: "var(--primary)", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Step {index + 1}</span>
+                                    <span style={{ fontWeight: "700", color: "var(--primary)", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Étape {index + 1}</span>
                                     <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }}></div>
                                 </div>
                                 <h3 style={{ fontSize: "1.75rem", marginBottom: "1rem" }}>{step.title}</h3>
@@ -72,9 +72,9 @@ export default function HowItWorks() {
 
             <Section dark>
                 <CTA
-                    title="Ready to Start Your Journey?"
-                    description="The process is simple and the results are immediate. Schedule your consultation today."
-                    buttonText="Contact Our Team"
+                    title="Prêt à commencer ?"
+                    description="Le processus est simple et les résultats sont immédiats. Planifiez votre consultation aujourd'hui."
+                    buttonText="Contacter l'Équipe"
                     buttonLink="/devis"
                 />
             </Section>

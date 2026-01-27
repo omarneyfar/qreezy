@@ -20,36 +20,33 @@ const Footer = () => {
                     <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                         <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Solutions</h4>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/digital-menu" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Digital Menu</Link>
-                            <Link href="/qreezy-fidelity" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Qreezy Fidelity</Link>
+                            <Link href="/menu-digital" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Menu Digital</Link>
+                            <Link href="/qreezy-fidelite" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Qreezy Fidélité</Link>
                         </div>
                     </div>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Company</h4>
+                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Entreprise</h4>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/about" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>About Us</Link>
+                            <Link href="/a-propos" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>À propos</Link>
                             <Link href="/contact" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Contact</Link>
-                            <Link href="/how-it-works" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>How It Works</Link>
+                            <Link href="/comment-ca-marche" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Comment ça marche</Link>
                         </div>
                     </div>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Legal</h4>
+                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Légal</h4>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/privacy-policy" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Privacy Policy</Link>
-                            <Link href="/terms-of-service" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Terms of Service</Link>
+                            <Link href="/privacy-policy" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Politique de Confidentialité</Link>
+                            <Link href="/terms-of-service" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Conditions d'Utilisation</Link>
                         </div>
                     </div>
                 </div>
 
                 <div style={{ borderTop: "1px solid var(--border)", paddingTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
                     <p style={{ fontSize: "0.85rem" }}>
-                        © {currentYear} {SITE_CONFIG.name}. All rights reserved.
+                        © {currentYear} {SITE_CONFIG.name}. Tous droits réservés.
                     </p>
-                    <div style={{ display: "flex", gap: "1.5rem" }}>
-                        {/* Social icons could go here */}
-                    </div>
                 </div>
             </div>
         </footer>

@@ -1,26 +1,25 @@
 export const SITE_CONFIG = {
     name: "Qreezy",
-    tagline: "QR Tools for Your Business",
-    description: "Modern QR solutions for restaurants and businesses. DigiMenu and Qreezy Fidelity.",
+    tagline: "Outils QR pour votre entreprise",
+    description: "Solutions QR modernes pour restaurants et entreprises. Menu Digital et Qreezy Fidélité.",
     primaryColor: "#EF6F60",
     navItems: [
-        { label: "Home", href: "/" },
-        { label: "Digital Menu", href: "/digital-menu" },
-        { label: "Qreezy Fidelity", href: "/qreezy-fidelity" },
-        { label: "How It Works", href: "/how-it-works" },
-        { label: "Devis", href: "/devis" },
+        { label: "Accueil", href: "/" },
+        { label: "Menu Digital", href: "/menu-digital" },
+        { label: "Qreezy Fidélité", href: "/qreezy-fidelite" },
+        { label: "Comment ça marche", href: "/comment-ca-marche" },
         { label: "Contact", href: "/contact" },
     ],
     products: {
         digiMenu: {
-            name: "DigiMenu",
-            href: "/digital-menu",
-            description: "A digital menu solution for restaurants to enhance the dining experience.",
+            name: "Menu Digital",
+            href: "/menu-digital",
+            description: "Une solution de menu numérique pour les restaurants afin d'améliorer l'expérience client.",
         },
         qreezyFidelity: {
-            name: "Qreezy Fidelity",
-            href: "/qreezy-fidelity",
-            description: "A digital loyalty program to keep your customers coming back.",
+            name: "Qreezy Fidélité",
+            href: "/qreezy-fidelite",
+            description: "Un programme de fidélité numérique pour fidéliser vos clients.",
         }
     }
 };

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SITE_CONFIG } from "@/lib/config";
 import Button from "../ui/Button";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -59,17 +60,17 @@ const Header = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <Button href="/devis">Request a Quote</Button>
+                    <Button href="/devis">Demander un Devis</Button>
                 </nav>
 
                 {/* Mobile Toggle */}
                 <button
                     onClick={toggleMobileMenu}
                     aria-label="Toggle Menu"
-                    style={{ display: "none", fontSize: "1.5rem", color: "var(--foreground)" }}
+                    style={{ display: "none", color: "var(--foreground)", background: "none", border: "none", cursor: "pointer" }}
                     className="mobile-toggle"
                 >
-                    {isMobileMenuOpen ? "✕" : "☰"}
+                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
 
@@ -102,7 +103,7 @@ const Header = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <Button href="/devis" onClick={closeMobileMenu}>Request a Quote</Button>
+                    <Button href="/devis" onClick={closeMobileMenu}>Demander un Devis</Button>
                 </div>
             )}
 

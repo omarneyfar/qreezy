@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SITE_CONFIG } from "@/lib/config";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -10,16 +12,13 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
 };
 
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body>
         <Header />
         <div style={{ minHeight: "100vh", paddingTop: "var(--header-height)" }}>
