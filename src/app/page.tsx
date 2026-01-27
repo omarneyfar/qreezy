@@ -40,7 +40,7 @@ export default function Home() {
                 alt="Qreezy Logo"
                 width={300}
                 height={67}
-                sizes="(max-width: 360px) 100px, (max-width: 480px) 140px, (max-width: 640px) 200px, (max-width: 1024px) 180px, 400px"
+                sizes="(max-width: 768px) 150px, (max-width: 1024px) 250px, 400px"
                 className="logo-image"
                 style={{ objectFit: "contain", height: "auto" }}
                 priority
@@ -164,7 +164,7 @@ export default function Home() {
         }
 
         .hero-title {
-          font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+          font-size: clamp(2rem, 5.5vw, 3.5rem);
           margin-bottom: 1.75rem;
           line-height: 1.1;
           font-weight: 800;
@@ -242,7 +242,7 @@ export default function Home() {
 
         .logo-image {
           width: 100%;
-          max-width: 200px;
+          display: block;
         }
 
         @keyframes float {
@@ -474,13 +474,13 @@ export default function Home() {
           }
 
           .logo-wrapper {
-            padding: 1.75rem 2rem;
+            padding: 1.5rem 2rem;
             border-radius: 18px;
-            max-width: 260px;
+            max-width: 280px;
           }
 
           .logo-image {
-            max-width: 140px;
+            width: 100%;
           }
         }
 
@@ -526,11 +526,13 @@ export default function Home() {
 
         @media (max-width: 360px) {
           .logo-wrapper {
-            padding: 1.25rem 1.5rem;
+            padding: 1rem 1.25rem;
+            max-width: 240px;
           }
-
+          
           .logo-image {
-            max-width: 100px;
+            width: 100% !important;
+            height: auto !important;
           }
 
           .hero-container {
