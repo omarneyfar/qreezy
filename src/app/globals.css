@@ -2,16 +2,21 @@
 
 :root {
   --primary: #EF6F60;
+  --primary-rgb: 239, 111, 96;
   --primary-light: #fbe2df;
+  --primary-dark: #d65a4e;
   --background: #FFFFFF;
-  --foreground: #1F2937;
-  --text-secondary: #6B7280;
-  --border: #E5E7EB;
-  --max-width: 1280px;
-  --radius: 12px;
+  --foreground: #111827;
+  --text-secondary: #4B5563;
+  --border: #F3F4F6;
+  --max-width: 1200px;
+  --radius: 16px;
+  --radius-lg: 24px;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --header-height: 72px;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-premium: 0 25px 50px -12px rgba(239, 111, 96, 0.15);
+  --header-height: 80px;
 }
 
 * {
@@ -98,4 +103,47 @@ select {
 
 .bg-primary-light {
   background-color: var(--primary-light);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.05rem;
 }

@@ -7,7 +7,7 @@ import CTA from "@/components/ui/CTA";
 import ClientCard from "@/components/ui/ClientCard";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import { Clock, TrendingDown, FileText, Smartphone, Utensils, Star } from "lucide-react";
+import { Clock, TrendingDown, FileText, Smartphone, Utensils, Star, Heart } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
 
             {/* Trust Signals */}
-            <div className="hero-trust">
+            {/* <div className="hero-trust">
               <div className="trust-item">
                 <span className="trust-number">+50</span>
                 <span className="trust-label">Établissements</span>
@@ -47,7 +47,7 @@ export default function Home() {
                 <span className="trust-number">7j/7</span>
                 <span className="trust-label">Support</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="hero-image-container">
@@ -120,7 +120,7 @@ export default function Home() {
 
           <div className="solution-card">
             <div className="solution-icon">
-              <Star size={48} strokeWidth={1.5} />
+              <Heart size={48} strokeWidth={1.5} />
             </div>
             <h3 className="solution-title">Qreezy Fidélité</h3>
             <p className="solution-description">
@@ -152,12 +152,13 @@ export default function Home() {
       </Section>
 
       {/* Final CTA */}
-      <Section>
+      <Section className="final-cta">
         <CTA
           title="Prêt à Moderniser Votre Activité ?"
           description="Rejoignez les nombreuses entreprises qui utilisent Qreezy pour simplifier leurs opérations. Demandez votre devis personnalisé dès aujourd'hui."
           buttonText="Demander un Devis"
           buttonLink="/devis"
+          className="premium-cta"
         />
       </Section>
 
@@ -177,7 +178,7 @@ export default function Home() {
         }
 
         .hero-title {
-          font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+          font-size.25lamp(2.25rem,.5.5vw, 4.5rem);
           margin-bottom: 1.75rem;
           line-height: 1.1;
           font-weight: 800;
