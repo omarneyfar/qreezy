@@ -30,24 +30,6 @@ export default function Home() {
               <Button href="/devis" className="hero-btn-primary">Commencer Maintenant</Button>
               <Button href="/comment-ca-marche" variant="outline">Découvrir</Button>
             </div>
-
-            {/* Trust Signals */}
-            {/* <div className="hero-trust">
-              <div className="trust-item">
-                <span className="trust-number">+50</span>
-                <span className="trust-label">Établissements</span>
-              </div>
-              <div className="divider"></div>
-              <div className="trust-item">
-                <span className="trust-number">4.9/5</span>
-                <span className="trust-label">Note Client</span>
-              </div>
-              <div className="divider"></div>
-              <div className="trust-item">
-                <span className="trust-number">7j/7</span>
-                <span className="trust-label">Support</span>
-              </div>
-            </div> */}
           </div>
 
           <div className="hero-image-container">
@@ -106,8 +88,10 @@ export default function Home() {
         />
         <div className="solutions-grid">
           <div className="solution-card">
-            <div className="solution-icon">
-              <Utensils size={48} strokeWidth={1.5} />
+            <div className="solution-icon-container">
+              <div className="solution-icon">
+                <Utensils size={40} strokeWidth={1.5} />
+              </div>
             </div>
             <h3 className="solution-title">Menu Digital</h3>
             <p className="solution-description">
@@ -119,8 +103,10 @@ export default function Home() {
           </div>
 
           <div className="solution-card">
-            <div className="solution-icon">
-              <Heart size={48} strokeWidth={1.5} />
+            <div className="solution-icon-container">
+              <div className="solution-icon">
+                <Heart size={40} strokeWidth={1.5} />
+              </div>
             </div>
             <h3 className="solution-title">Qreezy Fidélité</h3>
             <p className="solution-description">
@@ -178,7 +164,7 @@ export default function Home() {
         }
 
         .hero-title {
-          font-size.25lamp(2.25rem,.5.5vw, 4.5rem);
+          font-size: clamp(2.25rem, 5.5vw, 4.5rem);
           margin-bottom: 1.75rem;
           line-height: 1.1;
           font-weight: 800;
@@ -279,16 +265,24 @@ export default function Home() {
         /* Solutions Grid Styles */
         .solutions-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          grid-template-columns: repeat(2, 1fr);
           gap: 3rem;
           margin-top: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+          .solutions-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .solution-card {
           display: flex;
           flex-direction: column;
-          gap: 1.75rem;
-          padding: 3rem 2.5rem;
+          align-items: center;
+          text-align: center;
+          gap: 1.5rem;
+          padding: 3.5rem 2.5rem;
           border-radius: 20px;
           border: 1px solid var(--border);
           background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
@@ -298,47 +292,40 @@ export default function Home() {
           overflow: hidden;
         }
 
-        .solution-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, var(--primary), #ff8a80);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
         .solution-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-10px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
           border-color: var(--primary);
         }
 
-        .solution-card:hover::before {
-          opacity: 1;
+        .solution-icon-container {
+          margin-bottom: 0.5rem;
         }
 
         .solution-icon {
           color: var(--primary);
           display: inline-flex;
-          padding: 1rem;
-          background: rgba(239, 111, 96, 0.1);
+          padding: 1.25rem;
+          background: rgba(var(--primary-rgb), 0.1);
           border-radius: 16px;
           width: fit-content;
+          transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover .solution-icon {
+          transform: scale(1.1) rotate(5deg);
         }
 
         .solution-title {
           font-size: 1.85rem;
-          font-weight: 700;
+          font-weight: 800;
           margin: 0;
           color: var(--foreground);
         }
 
         .solution-description {
           font-size: 1.05rem;
-          line-height: 1.7;
+          line-height: 1.6;
           color: var(--text-secondary);
           flex: 1;
         }

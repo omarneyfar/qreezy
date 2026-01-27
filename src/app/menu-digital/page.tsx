@@ -1,16 +1,11 @@
-import { Metadata } from "next";
+"use client";
+
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
-import ClientCard from "@/components/ui/ClientCard";
 import Button from "@/components/ui/Button";
-import { Camera, Zap, Layout, Tag, Coffee, GlassWater, UtilityPole, Hotel } from "lucide-react";
-
-export const metadata: Metadata = {
-    title: "Menu Digital",
-    description: "Transformez votre restaurant avec un menu QR numérique, interactif et sans contact.",
-};
+import { Camera, Zap, Layout, Tag, Coffee, GlassWater, Utensils, Hotel } from "lucide-react";
 
 export default function DigitalMenuPage() {
     return (
@@ -18,42 +13,37 @@ export default function DigitalMenuPage() {
             {/* Intro Section */}
             <Section>
                 <SectionHeader
+                    icon={<Utensils size={48} />}
                     title="Menu Digital"
                     subtitle="Révolutionnez l'interaction de vos clients avec votre carte. Une expérience fluide, hygiénique et interactive pour les restaurants modernes."
                 />
-                <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
-                    <div style={{ padding: "3rem", backgroundColor: "var(--primary-light)", borderRadius: "20px", color: "var(--primary)" }}>
-                        <Utensils size={64} />
-                    </div>
-                </div>
             </Section>
 
             {/* Features Grid */}
             <Section dark>
-                <SectionHeader title="Fonctionnalités Clés" subtitle="Tout ce dont vous avez besoin pour gérer votre menu numériquement." />
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                    gap: "2rem"
-                }}>
+                <SectionHeader
+                    title="Fonctionnalités Clés"
+                    subtitle="Tout ce dont vous avez besoin pour gérer votre menu numériquement."
+                />
+                <div className="features-grid">
                     <FeatureCard
                         icon={<Camera size={24} />}
-                        title="Accès Instantané Sans Contact"
-                        description="Les clients scannent simplement un code QR sur leur table pour voir le menu instantanément."
+                        title="Accès Instantané"
+                        description="Les clients scannent simplement un code QR sur leur table pour voir le menu."
                     />
                     <FeatureCard
                         icon={<Zap size={24} />}
-                        title="Mises à jour en Temps Réel"
-                        description="Un plat est en rupture ? Changez-le en quelques secondes. Plus besoin de raturer vos menus papier."
+                        title="Mises à jour Directes"
+                        description="Changez vos plats en quelques secondes. Plus besoin de raturer vos menus papier."
                     />
                     <FeatureCard
                         icon={<Layout size={24} />}
                         title="Visuels de Qualité"
-                        description="Présentez des photos de haute qualité de vos plats pour stimuler l'appétit et augmenter le panier moyen."
+                        description="Présentez des photos de vos plats pour augmenter le panier moyen."
                     />
                     <FeatureCard
                         icon={<Tag size={24} />}
-                        title="Tarification Dynamique"
+                        title="Prix Dynamique"
                         description="Mettez facilement en place des tarifs Happy Hour sans frais de réimpression."
                     />
                 </div>
@@ -61,23 +51,23 @@ export default function DigitalMenuPage() {
 
             {/* Benefits */}
             <Section>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem" }}>
-                    <div>
-                        <h3 style={{ fontSize: "1.75rem", marginBottom: "1.5rem", color: "var(--primary)" }}>Pour Votre Entreprise</h3>
-                        <ul style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✅ <span>Zéro frais de réimpression</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✅ <span>Efficacité opérationnelle accrue</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✅ <span>Meilleures données sur les plats populaires</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✅ <span>image de marque moderne et innovante</span></li>
+                <div className="benefits-container">
+                    <div className="benefit-column">
+                        <h3 className="benefit-title">Pour Votre Entreprise</h3>
+                        <ul className="benefit-list">
+                            <li>✅ <span>Zéro frais de réimpression</span></li>
+                            <li>✅ <span>Efficacité opérationnelle accrue</span></li>
+                            <li>✅ <span>Image de marque moderne</span></li>
+                            <li>✅ <span>Données sur les plats populaires</span></li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 style={{ fontSize: "1.75rem", marginBottom: "1.5rem", color: "var(--primary)" }}>Pour Vos Clients</h3>
-                        <ul style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✨ <span>Expérience hygiénique et sans contact</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✨ <span>Pas d'attente pour le menu physique</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✨ <span>Descriptions et images claires</span></li>
-                            <li style={{ display: "flex", gap: "0.75rem" }}>✨ <span>Filtrage facile (allergènes, veg, etc.)</span></li>
+                    <div className="benefit-column">
+                        <h3 className="benefit-title">Pour Vos Clients</h3>
+                        <ul className="benefit-list">
+                            <li>✨ <span>Expérience sans contact</span></li>
+                            <li>✨ <span>Pas d'attente pour le menu</span></li>
+                            <li>✨ <span>Images claires et précises</span></li>
+                            <li>✨ <span>Filtrage facile (allergènes)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -86,11 +76,11 @@ export default function DigitalMenuPage() {
             {/* Use Cases */}
             <Section dark>
                 <SectionHeader title="Idéal pour Tout Établissement" />
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
-                    <FeatureCard icon={<Coffee size={24} />} title="Cafés" description="Parfait pour les environnements à rotation rapide." />
+                <div className="use-cases-grid">
+                    <FeatureCard icon={<Coffee size={24} />} title="Cafés" description="Pour les environnements à rotation rapide." />
                     <FeatureCard icon={<GlassWater size={24} />} title="Restaurants" description="Présentation élégante pour menus premium." />
-                    <FeatureCard icon={<Utensils size={24} />} title="Restauration Rapide" description="Affichage visuel pour des décisions rapides." />
-                    <FeatureCard icon={<Hotel size={24} />} title="Hôtels" description="Idéal pour les menus en chambre." />
+                    <FeatureCard icon={<Utensils size={24} />} title="Tavernes" description="Affichage visuel pour des décisions rapides." />
+                    <FeatureCard icon={<Hotel size={24} />} title="Hôtels" description="Idéal pour les menus en chambre (Room Service)." />
                 </div>
             </Section>
 
@@ -103,9 +93,60 @@ export default function DigitalMenuPage() {
                     buttonLink="/devis"
                 />
             </Section>
+
+            <style jsx>{`
+                .features-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2rem;
+                }
+
+                .use-cases-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1.5rem;
+                }
+
+                .benefits-container {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 4rem;
+                }
+
+                .benefit-title {
+                    font-size: 1.75rem;
+                    margin-bottom: 2rem;
+                    color: var(--primary);
+                    font-weight: 800;
+                }
+
+                .benefit-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.25rem;
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .benefit-list li {
+                    display: flex;
+                    gap: 0.75rem;
+                    font-size: 1.1rem;
+                }
+
+                @media (max-width: 1024px) {
+                    .features-grid, .use-cases-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .features-grid, .use-cases-grid, .benefits-container {
+                        grid-template-columns: 1fr;
+                        gap: 2.5rem;
+                    }
+                }
+            `}</style>
         </>
     );
 }
-
-import { Utensils as UtensilsIcon } from "lucide-react";
-const Utensils = UtensilsIcon; // Re-alias for consistency
