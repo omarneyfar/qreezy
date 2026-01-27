@@ -7,44 +7,44 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer style={{ backgroundColor: "#F9FAFB", borderTop: "1px solid var(--border)", padding: "4rem 0 2rem" }}>
-            <div className="container">
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "3rem", marginBottom: "4rem" }}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                        <Link href="/">
-                            <Image src="/logo-header.png" alt="Qreezy Logo" width={100} height={35} style={{ objectFit: "contain" }} />
+        <footer className="bg-slate-50 border-t border-border py-16 md:py-20">
+            <div className="container mx-auto px-6 md:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    <div className="flex flex-col gap-6">
+                        <Link href="/" className="inline-block">
+                            <Image src="/logo-header.png" alt="Qreezy Logo" width={100} height={35} className="object-contain" />
                         </Link>
-                        <p style={{ fontSize: "0.95rem" }}>{SITE_CONFIG.tagline}</p>
+                        <p className="text-secondary text-base max-w-xs">{SITE_CONFIG.tagline}</p>
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Solutions</h4>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/menu-digital" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Menu Digital</Link>
-                            <Link href="/qreezy-fidelite" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Qreezy Fidélité</Link>
+                    <div className="flex flex-col gap-5">
+                        <h4 className="text-foreground font-bold text-lg">Solutions</h4>
+                        <div className="flex flex-col gap-3">
+                            <Link href="/digital-menu" className="text-secondary hover:text-primary transition-colors">Menu Digital</Link>
+                            <Link href="/qreezy-fidelite" className="text-secondary hover:text-primary transition-colors">Qreezy Fidélité</Link>
                         </div>
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Entreprise</h4>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/a-propos" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>À propos</Link>
-                            <Link href="/contact" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Contact</Link>
-                            <Link href="/comment-ca-marche" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Comment ça marche</Link>
+                    <div className="flex flex-col gap-5">
+                        <h4 className="text-foreground font-bold text-lg">Entreprise</h4>
+                        <div className="flex flex-col gap-3">
+                            <Link href="/about" className="text-secondary hover:text-primary transition-colors">À propos</Link>
+                            <Link href="/contact" className="text-secondary hover:text-primary transition-colors">Contact</Link>
+                            <Link href="/how-it-works" className="text-secondary hover:text-primary transition-colors">Comment ça marche</Link>
                         </div>
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                        <h4 style={{ fontSize: "1rem", color: "var(--foreground)" }}>Légal</h4>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                            <Link href="/privacy-policy" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Politique de Confidentialité</Link>
-                            <Link href="/terms-of-service" style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>Conditions d'Utilisation</Link>
+                    <div className="flex flex-col gap-5">
+                        <h4 className="text-foreground font-bold text-lg">Légal</h4>
+                        <div className="flex flex-col gap-3">
+                            <Link href="/privacy-policy" className="text-secondary hover:text-primary transition-colors">Politique de Confidentialité</Link>
+                            <Link href="/terms-of-service" className="text-secondary hover:text-primary transition-colors">Conditions d'Utilisation</Link>
                         </div>
                     </div>
                 </div>
 
-                <div style={{ borderTop: "1px solid var(--border)", paddingTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-                    <p style={{ fontSize: "0.85rem" }}>
+                <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-secondary text-sm">
                         © {currentYear} {SITE_CONFIG.name}. Tous droits réservés.
                     </p>
                 </div>

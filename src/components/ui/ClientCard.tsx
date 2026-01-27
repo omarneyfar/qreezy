@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface ClientCardProps {
     clientName: string;
@@ -8,22 +9,17 @@ interface ClientCardProps {
 
 const ClientCard: React.FC<ClientCardProps> = ({ clientName, usageDescription, className = "" }) => {
     return (
-        <div
-            className={`client-card ${className}`}
-            style={{
-                padding: "2rem",
-                borderRadius: "var(--radius)",
-                backgroundColor: "#F9FAFB",
-                border: "1px solid var(--border)",
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem"
-            }}
-        >
-            <h4 style={{ fontSize: "1.125rem", color: "var(--foreground)" }}>{clientName}</h4>
-            <p style={{ fontSize: "1rem", fontStyle: "italic", borderLeft: "3px solid var(--primary)", paddingLeft: "1rem" }}>
-                "{usageDescription}"
-            </p>
+        <div className={cn(
+            "p-8 rounded-2xl bg-slate-50 border border-border flex flex-col gap-4",
+            className
+        )}>
+            <h4 className="text-lg font-bold text-foreground">{clientName}</h4>
+            <div className="relative pl-6">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-full" />
+                <p className="text-secondary italic text-lg leading-relaxed">
+                    "{usageDescription}"
+                </p>
+            </div>
         </div>
     );
 };

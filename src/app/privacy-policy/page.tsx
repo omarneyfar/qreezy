@@ -1,21 +1,55 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Politique de Confidentialité",
+    description: "Comment nous gérons vos données chez Qreezy.",
+};
 
 export default function PrivacyPolicy() {
     return (
-        <Section>
-            <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-                <SectionHeader title="Politique de Confidentialité" centered={false} />
-                <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                    <p>Dernière mise à jour : 27 janvier 2026</p>
-                    <h3>1. Introduction</h3>
-                    <p>Chez Qreezy, nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique vous informe sur la manière dont nous traitons vos données lors de votre visite sur notre site.</p>
-                    <h3>2. Données Collectées</h3>
-                    <p>Lorsque vous utilisez notre formulaire de devis, nous collectons les informations suivantes : Nom, Email, Nom de l'entreprise, Type d'activité, Ville/Pays et votre message. Ces informations sont utilisées uniquement pour répondre à votre demande.</p>
-                    <h3>3. Utilisation des Données</h3>
-                    <p>Nous utilisons les données collectées pour vous fournir les informations demandées, préparer des devis personnalisés et communiquer sur nos services.</p>
-                    <h3>4. Sécurité</h3>
-                    <p>Vos données sont stockées de manière sécurisée et ne sont accessibles qu'au personnel autorisé de Qreezy. Nous ne vendons ni ne partageons vos données avec des tiers.</p>
+        <Section className="pt-12 md:pt-20">
+            <div className="max-w-3xl mx-auto">
+                <SectionHeader
+                    title="Politique de Confidentialité"
+                    subtitle="Dernière mise à jour : 24 Janvier 2026"
+                />
+
+                <div className="space-y-12 mt-12 text-secondary leading-relaxed text-lg">
+                    <section>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">1. Collecte des Données</h2>
+                        <p>
+                            Nous collectons uniquement les informations nécessaires pour fournir nos services,
+                            notamment via notre formulaire de devis (nom, email, nom de l'entreprise).
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">2. Utilisation des Données</h2>
+                        <p>
+                            Vos données sont utilisées exclusivement pour répondre à vos demandes de devis
+                            et améliorer l'expérience utilisateur sur notre site.
+                            Nous ne vendons jamais vos données à des tiers.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">3. Sécurité</h2>
+                        <p>
+                            Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles
+                            pour protéger vos données personnelles contre tout accès non autorisé.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">4. Vos Droits</h2>
+                        <p>
+                            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification
+                            et de suppression de vos données personnelles. Contactez-nous à
+                            contact@qreezy.com pour toute demande.
+                        </p>
+                    </section>
                 </div>
             </div>
         </Section>

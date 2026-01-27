@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import Button from "./Button";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CTAProps {
     title: string;
@@ -14,112 +16,32 @@ interface CTAProps {
 
 const CTA: React.FC<CTAProps> = ({ title, description, buttonText, buttonLink, className = "" }) => {
     return (
-        <div className={`cta-outer ${className}`}>
-            <div className="cta-content">
-                <div className="cta-text">
-                    <h2>{title}</h2>
-                    <p>{description}</p>
+        <div className={cn(
+            "relative bg-primary text-white p-10 md:p-16 lg:p-20 rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20",
+            className
+        )}>
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                <div className="max-w-2xl">
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                        {title}
+                    </h2>
+                    <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+                        {description}
+                    </p>
                 </div>
-                <div className="cta-action">
-                    <Button href={buttonLink}>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div className="shrink-0">
+                    <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 font-bold px-8 h-14 rounded-xl text-lg group">
+                        <Link href={buttonLink}>
                             {buttonText}
-                            <ArrowRight size={20} />
-                        </span>
+                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </Link>
                     </Button>
                 </div>
             </div>
 
-            {/* Decorative shapes */}
-            <div className="cta-shape shape-1"></div>
-            <div className="cta-shape shape-2"></div>
-
-            <style jsx>{`
-                .cta-outer {
-                    position: relative;
-                    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-                    color: #FFFFFF;
-                    padding: 5rem 4rem;
-                    border-radius: var(--radius-lg);
-                    overflow: hidden;
-                    box-shadow: var(--shadow-premium);
-                }
-
-                .cta-content {
-                    position: relative;
-                    z-index: 2;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 3rem;
-                    text-align: left;
-                }
-
-                .cta-text {
-                    flex: 1;
-                    max-width: 600px;
-                }
-
-                h2 {
-                    color: #FFFFFF;
-                    font-size: clamp(2rem, 4vw, 3rem);
-                    margin-bottom: 1.5rem;
-                    line-height: 1.1;
-                }
-
-                p {
-                    color: rgba(255, 255, 255, 0.9);
-                    font-size: 1.2rem;
-                    line-height: 1.6;
-                }
-
-                .cta-action {
-                    flex-shrink: 0;
-                }
-
-                .cta-shape {
-                    position: absolute;
-                    background: rgba(255, 255, 255, 0.1);
-                    border-radius: 50%;
-                    z-index: 1;
-                }
-
-                .shape-1 {
-                    width: 300px;
-                    height: 300px;
-                    top: -100px;
-                    right: -50px;
-                }
-
-                .shape-2 {
-                    width: 150px;
-                    height: 150px;
-                    bottom: -50px;
-                    left: 10%;
-                }
-
-                @media (max-width: 1024px) {
-                    .cta-content {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-                    .cta-text {
-                        max-width: 100%;
-                    }
-                    .cta-outer {
-                        padding: 4rem 2rem;
-                    }
-                }
-
-                @media (max-width: 640px) {
-                    h2 {
-                        font-size: 2rem;
-                    }
-                    p {
-                        font-size: 1.1rem;
-                    }
-                }
-            `}</style>
+            {/* Decorative elements */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-black/10 rounded-full blur-3xl pointer-events-none" />
         </div>
     );
 };

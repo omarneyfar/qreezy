@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
     children: React.ReactNode;
@@ -13,26 +12,15 @@ const Section: React.FC<SectionProps> = ({ children, id, className = "", dark = 
     return (
         <section
             id={id}
-            className={`section ${dark ? "bg-primary-light" : ""} ${className}`}
+            className={cn(
+                "py-12 md:py-20 lg:py-24",
+                dark ? "bg-primary/5" : "bg-white",
+                className
+            )}
         >
-            <div className="container">
+            <div className="container mx-auto px-6 md:px-8">
                 {children}
             </div>
-            <style jsx>{`
-                .section {
-                    padding: 5rem 0;
-                }
-                @media (max-width: 768px) {
-                    .section {
-                        padding: 3rem 0;
-                    }
-                }
-                @media (max-width: 480px) {
-                    .section {
-                        padding: 2rem 0;
-                    }
-                }
-            `}</style>
         </section>
     );
 };

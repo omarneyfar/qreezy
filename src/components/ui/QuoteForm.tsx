@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Section from "@/components/ui/Section";
-import SectionHeader from "@/components/ui/SectionHeader";
-import Button from "@/components/ui/Button";
-import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const QuoteForm = () => {
     const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
@@ -19,15 +22,17 @@ const QuoteForm = () => {
 
     if (formState === "success") {
         return (
-            <div style={{ textAlign: "center", padding: "4rem", backgroundColor: "#F9FAFB", borderRadius: "12px" }}>
-                <div className="text-primary" style={{ marginBottom: "1rem", display: "flex", justifyContent: "center" }}>
-                    <CheckCircle size={64} />
+            <div className="text-center py-16 px-8 bg-slate-50 rounded-3xl border border-border animate-in fade-in zoom-in duration-500">
+                <div className="text-primary mb-6 flex justify-center">
+                    <CheckCircle className="w-20 h-20" />
                 </div>
-                <h2 style={{ marginBottom: "1rem" }}>Merci !</h2>
-                <p style={{ fontSize: "1.125rem", color: "var(--text-secondary)", marginBottom: "2rem" }}>
+                <h2 className="text-3xl font-bold mb-4 text-foreground">Merci !</h2>
+                <p className="text-xl text-secondary mb-10 max-w-md mx-auto">
                     Votre demande a été reçue. Notre équipe l'étudiera et vous recontactera sous 24-48 heures.
                 </p>
-                <Button href="/">Retour à l'accueil</Button>
+                <Button asChild size="lg" className="rounded-xl font-bold px-8 h-14 text-lg">
+                    <a href="/">Retour à l'accueil</a>
+                </Button>
             </div>
         );
     }
@@ -35,25 +40,30 @@ const QuoteForm = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.5rem",
-                backgroundColor: "#FFFFFF",
-                padding: "2.5rem",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                boxShadow: "var(--shadow)"
-            }}
+            className="flex flex-col gap-8 bg-white p-8 md:p-12 rounded-3xl border border-border shadow-xl shadow-slate-200/50"
         >
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
-                <div className="field-group">
-                    <label htmlFor="businessName" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Nom de l'entreprise</label>
-                    <input type="text" id="businessName" required style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)" }} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                    <Label htmlFor="businessName" className="text-base font-bold text-foreground">
+                        Nom de l'entreprise
+                    </Label>
+                    <Input
+                        type="text"
+                        id="businessName"
+                        required
+                        placeholder="Ex: Le Petit Bistro"
+                        className="h-14 rounded-xl border-border focus:ring-primary focus:border-primary text-base"
+                    />
                 </div>
-                <div className="field-group">
-                    <label htmlFor="businessType" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Type d'établissement</label>
-                    <select id="businessType" required style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)", backgroundColor: "#FFFFFF" }}>
+                <div className="space-y-3">
+                    <Label htmlFor="businessType" className="text-base font-bold text-foreground">
+                        Type d'établissement
+                    </Label>
+                    <select
+                        id="businessType"
+                        required
+                        className="flex h-14 w-full rounded-xl border border-border bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
                         <option value="">Sélectionnez un type...</option>
                         <option value="restaurant">Restaurant</option>
                         <option value="cafe">Café</option>
@@ -64,44 +74,96 @@ const QuoteForm = () => {
                 </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
-                <div className="field-group">
-                    <label htmlFor="fullName" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Nom Complet</label>
-                    <input type="text" id="fullName" required style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)" }} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                    <Label htmlFor="fullName" className="text-base font-bold text-foreground">
+                        Nom Complet
+                    </Label>
+                    <Input
+                        type="text"
+                        id="fullName"
+                        required
+                        placeholder="Votre prénom et nom"
+                        className="h-14 rounded-xl border-border focus:ring-primary focus:border-primary text-base"
+                    />
                 </div>
-                <div className="field-group">
-                    <label htmlFor="email" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Adresse Email</label>
-                    <input type="email" id="email" required style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)" }} />
-                </div>
-            </div>
-
-            <div className="field-group">
-                <label htmlFor="city" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Ville / Pays</label>
-                <input type="text" id="city" required style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)" }} />
-            </div>
-
-            <div className="field-group">
-                <p style={{ marginBottom: "0.75rem", fontWeight: "600", fontSize: "0.9rem", color: "var(--foreground)" }}>Solutions intéressées</p>
-                <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
-                    <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
-                        <input type="checkbox" name="solutions" value="digimenu" style={{ width: "18px", height: "18px", accentColor: "var(--primary)" }} />
-                        <span>Menu Digital</span>
-                    </label>
-                    <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
-                        <input type="checkbox" name="solutions" value="fidelity" style={{ width: "18px", height: "18px", accentColor: "var(--primary)" }} />
-                        <span>Qreezy Fidélité</span>
-                    </label>
+                <div className="space-y-3">
+                    <Label htmlFor="email" className="text-base font-bold text-foreground">
+                        Adresse Email
+                    </Label>
+                    <Input
+                        type="email"
+                        id="email"
+                        required
+                        placeholder="you@example.com"
+                        className="h-14 rounded-xl border-border focus:ring-primary focus:border-primary text-base"
+                    />
                 </div>
             </div>
 
-            <div className="field-group">
-                <label htmlFor="message" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Message (Optionnel)</label>
-                <textarea id="message" rows={4} style={{ width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid var(--border)", outlineColor: "var(--primary)", resize: "vertical" }} placeholder="Dites-nous en plus sur vos besoins..."></textarea>
+            <div className="space-y-3">
+                <Label htmlFor="city" className="text-base font-bold text-foreground">
+                    Ville / Pays
+                </Label>
+                <Input
+                    type="text"
+                    id="city"
+                    required
+                    placeholder="Ex: Paris, France"
+                    className="h-14 rounded-xl border-border focus:ring-primary focus:border-primary text-base"
+                />
             </div>
 
-            <div style={{ marginTop: "1rem" }}>
-                <Button type="submit" disabled={formState === "submitting"}>
-                    {formState === "submitting" ? "Envoi en cours..." : "Demander mon Devis"}
+            <div className="space-y-4">
+                <p className="text-base font-bold text-foreground">Solutions intéressées</p>
+                <div className="flex gap-8 flex-wrap">
+                    <div className="flex items-center space-x-3">
+                        <Checkbox id="digimenu" />
+                        <label
+                            htmlFor="digimenu"
+                            className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                        >
+                            Menu Digital
+                        </label>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                        <Checkbox id="fidelity" />
+                        <label
+                            htmlFor="fidelity"
+                            className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                        >
+                            Qreezy Fidélité
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div className="space-y-3">
+                <Label htmlFor="message" className="text-base font-bold text-foreground">
+                    Message (Optionnel)
+                </Label>
+                <Textarea
+                    id="message"
+                    rows={4}
+                    placeholder="Dites-nous en plus sur vos besoins..."
+                    className="rounded-xl border-border focus:ring-primary focus:border-primary text-base p-4"
+                />
+            </div>
+
+            <div className="pt-4">
+                <Button
+                    type="submit"
+                    disabled={formState === "submitting"}
+                    className="w-full h-16 rounded-2xl text-xl font-bold shadow-xl shadow-primary/20 group"
+                >
+                    {formState === "submitting" ? (
+                        "Envoi en cours..."
+                    ) : (
+                        <span className="flex items-center justify-center gap-2">
+                            Demander mon Devis
+                            <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                        </span>
+                    )}
                 </Button>
             </div>
         </form>

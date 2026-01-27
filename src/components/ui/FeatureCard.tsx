@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface FeatureCardProps {
     icon: React.ReactNode;
@@ -9,35 +10,15 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, className = "" }) => {
     return (
-        <div
-            className={`feature-card ${className}`}
-            style={{
-                padding: "2rem",
-                borderRadius: "var(--radius)",
-                backgroundColor: "#FFFFFF",
-                border: "1px solid var(--border)",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem"
-            }}
-        >
-            <div style={{
-                width: "48px",
-                height: "48px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "var(--primary-light)",
-                color: "var(--primary)",
-                borderRadius: "10px",
-                fontSize: "1.5rem"
-            }}>
+        <div className={cn(
+            "p-8 rounded-2xl bg-white border border-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary flex flex-col gap-4 h-full",
+            className
+        )}>
+            <div className="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-xl text-2xl shrink-0">
                 {icon}
             </div>
-            <h3 style={{ fontSize: "1.25rem", color: "var(--foreground)" }}>{title}</h3>
-            <p style={{ fontSize: "1rem", color: "var(--text-secondary)" }}>{description}</p>
+            <h3 className="text-xl font-bold text-foreground leading-tight">{title}</h3>
+            <p className="text-secondary leading-relaxed">{description}</p>
         </div>
     );
 };
