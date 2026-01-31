@@ -5,12 +5,20 @@ import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import { Button } from "@/components/ui/button";
 import { Smartphone, BarChart3, Mail, Lock, Heart, ArrowRight } from "lucide-react";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Qreezy Fidélité",
-    description: "Transformez les clients occasionnels en habitués fidèles avec un programme de fidélité numérique optimisé pour mobile.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Programme Fidélité Digital pour Restaurant | Carte de Fidélité Tunisie",
+    description: "Programme de fidélité numérique pour restaurants en Tunisie. Carte fidélité digitale sans application. Augmentez la rétention client et le panier moyen avec Qreezy Fidélité.",
+    keywords: [
+        "programme fidélité restaurant",
+        "carte fidélité digitale",
+        "fidélité client restaurant",
+        "loyalty program Tunisia",
+        "programme points restaurant",
+    ],
+    canonical: "/qreezy-fidelity",
+});
 
 export default function FidelityPage() {
     const steps = [

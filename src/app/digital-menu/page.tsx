@@ -5,12 +5,21 @@ import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import { Button } from "@/components/ui/button";
 import { Camera, Zap, Layout, Tag, Coffee, GlassWater, Utensils, Hotel, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata, generateProductSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Menu Digital",
-    description: "Révolutionnez l'interaction de vos clients avec votre carte. Une expérience fluide, hygiénique et interactive pour les restaurants modernes.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Menu Digital QR Code pour Restaurant | Carte Sans Contact Tunisie",
+    description: "Menu digital restaurant avec QR code en Tunisie. Carte numérique sans contact, mise à jour instantanée. Solution moderne pour cafés, restaurants et hôtels.",
+    keywords: [
+        "menu digital restaurant",
+        "QR code menu",
+        "carte numérique",
+        "menu sans contact",
+        "menu restaurant Tunisie",
+        "carte digitale QR",
+    ],
+    canonical: "/digital-menu",
+});
 
 export default function DigitalMenuPage() {
     return (

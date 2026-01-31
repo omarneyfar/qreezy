@@ -1,12 +1,19 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import QuoteForm from "@/components/ui/QuoteForm";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Demander un Devis",
-    description: "Parlez-nous de votre entreprise et de vos besoins en solutions QR.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Demander un Devis | Prix Menu Digital et Fidélité Restaurant Tunisie",
+    description: "Obtenez un devis gratuit pour votre menu digital QR code et programme de fidélité. Solutions personnalisées pour restaurants en Tunisie. Réponse sous 24h.",
+    keywords: [
+        "devis menu digital",
+        "prix menu QR code",
+        "tarif programme fidélité",
+        "devis restaurant digital Tunisie",
+    ],
+    canonical: "/devis",
+});
 
 export default function DevisPage() {
     return (

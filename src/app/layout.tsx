@@ -1,18 +1,73 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_CONFIG } from "@/lib/config";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { organizationSchema, localBusinessSchema } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://qreezy.tn'),
   title: {
-    default: SITE_CONFIG.name,
-    template: `%s | ${SITE_CONFIG.name}`,
+    default: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
+    template: '%s | Qreezy',
   },
-  description: SITE_CONFIG.description,
+  description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité. Modernisez votre restaurant avec Qreezy.',
+  keywords: [
+    'menu digital',
+    'QR code restaurant',
+    'carte numérique',
+    'menu sans contact',
+    'fidélité restaurant',
+    'programme fidélité',
+    'solutions digitales restaurants',
+    'restaurant Tunisie',
+    'menu digital Tunisie',
+    'Qreezy',
+  ],
+  authors: [{ name: 'Qreezy' }],
+  creator: 'Qreezy',
+  publisher: 'Qreezy',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_TN',
+    url: 'https://qreezy.tn',
+    title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
+    description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité.',
+    siteName: 'Qreezy',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Qreezy - Solutions Digitales pour Restaurants',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
+    description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité.',
+    images: ['/og-image.png'],
+    creator: '@qreezy',
+  },
+  alternates: {
+    canonical: 'https://qreezy.tn',
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +77,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow pt-20">

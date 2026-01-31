@@ -3,13 +3,20 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 import ContactForm from "@/components/ui/ContactForm";
 
-export const metadata: Metadata = {
-    title: "Contact",
-    description: "Contactez l'équipe Qreezy pour toute question ou support.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Contact Qreezy Tunisie | Demander un Devis Menu Digital",
+    description: "Contactez Qreezy en Tunisie pour vos solutions de menu digital et fidélité. Email: contact@qreezy.tn | Tél: +216 44785090. Réponse sous 24h.",
+    keywords: [
+        "contact Qreezy",
+        "devis menu digital Tunisie",
+        "contact restaurant digital",
+        "Qreezy Tunisie",
+    ],
+    canonical: "/contact",
+});
 
 export default function ContactPage() {
     return (
