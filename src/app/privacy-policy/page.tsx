@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">1. Collecte des Données</h2>
                         <p>
                             Nous collectons uniquement les informations nécessaires pour fournir nos services,
-                            notamment via notre formulaire de devis (nom, email, nom de l'entreprise).
+                            notamment via notre formulaire de devis (nom, email, nom de l&apos;entreprise).
                         </p>
                     </section>
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">2. Utilisation des Données</h2>
                         <p>
                             Vos données sont utilisées exclusivement pour répondre à vos demandes de devis
-                            et améliorer l'expérience utilisateur sur notre site.
+                            et améliorer l&apos;expérience utilisateur sur notre site.
                             Nous ne vendons jamais vos données à des tiers.
                         </p>
                     </section>
@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
                     <section>
                         <h2 className="text-2xl font-bold text-foreground mb-4">4. Vos Droits</h2>
                         <p>
-                            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification
+                            Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification
                             et de suppression de vos données personnelles. Contactez-nous à
                             contact@qreezy.com pour toute demande.
                         </p>

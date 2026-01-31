@@ -38,7 +38,7 @@ const Footer = () => {
                         <h4 className="text-foreground font-bold text-lg">Légal</h4>
                         <div className="flex flex-col gap-3">
                             <Link href="/privacy-policy" className="text-secondary hover:text-primary transition-colors">Politique de Confidentialité</Link>
-                            <Link href="/terms-of-service" className="text-secondary hover:text-primary transition-colors">Conditions d'Utilisation</Link>
+                            <Link href="/terms-of-service" className="text-secondary hover:text-primary transition-colors">Conditions d&apos;Utilisation</Link>
                         </div>
                     </div>
                 </div>

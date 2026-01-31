@@ -22,8 +22,8 @@ export default function AboutPage() {
                     <p className="text-xl md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto mt-8">
                         Chez Qreezy, nous pensons que la technologie moderne ne devrait pas être compliquée ou coûteuse.
                         Notre mission est de fournir aux petites et moyennes entreprises les mêmes avantages numériques
-                        que les grandes corporations—en commençant par l'outil le plus puissant de
-                        l'interface physique-numérique : le code QR.
+                        que les grandes corporations—en commençant par l&apos;outil le plus puissant de
+                        l&apos;interface physique-numérique : le code QR.
                     </p>
                 </div>
             </Section>

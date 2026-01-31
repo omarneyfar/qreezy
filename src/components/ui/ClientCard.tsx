@@ -17,7 +17,7 @@ const ClientCard: React.FC<ClientCardProps> = ({ clientName, usageDescription, c
             <div className="relative pl-6">
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-full" />
                 <p className="text-secondary italic text-lg leading-relaxed">
-                    "{usageDescription}"
+                    &ldquo;{usageDescription}&rdquo;
                 </p>
             </div>
         </div>

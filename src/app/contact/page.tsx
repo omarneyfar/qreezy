@@ -38,7 +38,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-primary/5 p-10 md:p-16 rounded-[2.5rem] text-center border border-primary/10">
-                    <h3 className="text-2xl md:text-3xl font-extrabold mb-4">Besoin d'un devis personnalisé ?</h3>
+                    <h3 className="text-2xl md:text-3xl font-extrabold mb-4">Besoin d&apos;un devis personnalisé ?</h3>
                     <p className="text-lg text-secondary mb-10 max-w-xl mx-auto">
                         Pour une étude détaillée de vos besoins, veuillez utiliser notre formulaire de devis dédié.
                     </p>

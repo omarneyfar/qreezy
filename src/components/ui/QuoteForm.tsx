@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { CheckCircle, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const QuoteForm = () => {
     const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
@@ -28,10 +28,10 @@ const QuoteForm = () => {
                 </div>
                 <h2 className="text-3xl font-bold mb-4 text-foreground">Merci !</h2>
                 <p className="text-xl text-secondary mb-10 max-w-md mx-auto">
-                    Votre demande a été reçue. Notre équipe l'étudiera et vous recontactera sous 24-48 heures.
+                    Votre demande a été reçue. Notre équipe l&apos;étudiera et vous recontactera sous 24-48 heures.
                 </p>
                 <Button asChild size="lg" className="rounded-xl font-bold px-8 h-14 text-lg">
-                    <a href="/">Retour à l'accueil</a>
+                    <Link href="/">Retour à l&apos;accueil</Link>
                 </Button>
             </div>
         );
@@ -45,7 +45,7 @@ const QuoteForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                     <Label htmlFor="businessName" className="text-base font-bold text-foreground">
-                        Nom de l'entreprise
+                        Nom de l&apos;entreprise
                     </Label>
                     <Input
                         type="text"
@@ -57,7 +57,7 @@ const QuoteForm = () => {
                 </div>
                 <div className="space-y-3">
                     <Label htmlFor="businessType" className="text-base font-bold text-foreground">
-                        Type d'établissement
+                        Type d&apos;établissement
                     </Label>
                     <select
                         id="businessType"

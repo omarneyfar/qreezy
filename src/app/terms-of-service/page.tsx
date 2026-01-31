@@ -20,8 +20,8 @@ export default function TermsOfService() {
                     <section>
                         <h2 className="text-2xl font-bold text-foreground mb-4">1. Acceptation des Conditions</h2>
                         <p>
-                            En accédant au site Qreezy, vous acceptez d'être lié par les présentes
-                            conditions d'utilisation et par toutes les lois et réglementations applicables.
+                            En accédant au site Qreezy, vous acceptez d&apos;être lié par les présentes
+                            conditions d&apos;utilisation et par toutes les lois et réglementations applicables.
                         </p>
                     </section>
 
@@ -29,7 +29,7 @@ export default function TermsOfService() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">2. Propriété Intellectuelle</h2>
                         <p>
                             Le contenu de ce site, incluant les textes, graphismes et logos, est la propriété
-                            exclusive de Qreezy et est protégé par les lois sur le droit d'auteur.
+                            exclusive de Qreezy et est protégé par les lois sur le droit d&apos;auteur.
                         </p>
                     </section>
 
@@ -37,7 +37,7 @@ export default function TermsOfService() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">3. Limitation de Responsabilité</h2>
                         <p>
                             Qreezy ne pourra être tenu responsable des dommages directs ou indirects
-                            résultant de l'utilisation ou de l'impossibilité d'utiliser le site ou ses services.
+                            résultant de l&apos;utilisation ou de l&apos;impossibilité d&apos;utiliser le site ou ses services.
                         </p>
                     </section>
 

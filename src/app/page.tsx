@@ -101,7 +101,7 @@ export default function Home() {
             </div>
             <h3 className="text-3xl font-extrabold text-foreground mb-6">Menu Digital</h3>
             <p className="text-lg text-secondary leading-relaxed mb-10 flex-grow">
-              Transformez l'expérience culinaire de votre restaurant avec un menu numérique rapide, beau et interactif. Mettez à jour vos plats instantanément.
+              Transformez l&apos;expérience culinaire de votre restaurant avec un menu numérique rapide, beau et interactif. Mettez à jour vos plats instantanément.
             </p>
             <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto px-10 h-14 rounded-xl font-bold text-lg bg-slate-100 hover:bg-primary hover:text-white transition-all text-foreground">
               <Link href="/digital-menu">Explorer Menu Digital</Link>
