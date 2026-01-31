@@ -57,14 +57,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Qreezy' }],
   creator: 'Qreezy',
   publisher: 'Qreezy',
-  icons: {
-    icon: [
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
   robots: {
     index: true,
     follow: true,
