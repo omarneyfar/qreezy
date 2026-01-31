@@ -87,14 +87,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
     description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité.',
-    images: ['https://qreezy.tn/og-image.png'],
+    images: ['http://qreezy.tn/og-image.png'],
     creator: '@qreezy',
   },
   alternates: {
     canonical: 'https://qreezy.tn',
   },
   verification: {
-    google: 'your-google-site-verification',
+    google: 'LtAUFdbyZhGMRNEZfk4axrEQeHmmRoFpIIeahl22Iw8',
   },
 };
 
