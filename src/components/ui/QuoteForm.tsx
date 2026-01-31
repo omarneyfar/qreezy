@@ -100,9 +100,9 @@ const QuoteForm = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-8 bg-white p-8 md:p-12 rounded-3xl border border-border shadow-xl shadow-slate-200/50"
+            className="flex flex-col gap-6 md:gap-8 bg-white p-4 sm:p-6 md:p-12 rounded-3xl border border-border shadow-xl shadow-slate-200/50"
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-3">
                     <Label htmlFor="businessName" className="text-base font-bold text-foreground">
                         Nom de l&apos;entreprise
@@ -181,7 +181,7 @@ const QuoteForm = () => {
 
             <div className="space-y-4">
                 <p className="text-base font-bold text-foreground">Solutions intéressées</p>
-                <div className="flex gap-8 flex-wrap">
+                <div className="flex gap-4 md:gap-8 flex-wrap">
                     <div className="flex items-center space-x-3">
                         <Checkbox id="digimenu" name="digimenu" />
                         <label

@@ -2,8 +2,9 @@ import Link from "next/link";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { Mail, MessageSquare } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Metadata } from "next";
+import ContactForm from "@/components/ui/ContactForm";
 
 export const metadata: Metadata = {
     title: "Contact",
@@ -26,15 +27,20 @@ export default function ContactPage() {
                             <Mail className="w-10 h-10" />
                         </div>
                         <h4 className="text-xl font-bold mb-2">Email</h4>
-                        <p className="text-primary font-bold text-lg">contact@qreezy.com</p>
+                        <p className="text-primary font-bold text-lg">contact@qreezy.tn</p>
                     </div>
                     <div className="p-8 border border-border rounded-3xl bg-white shadow-sm flex flex-col items-center text-center">
                         <div className="text-primary mb-6 p-4 bg-primary/5 rounded-2xl">
-                            <MessageSquare className="w-10 h-10" />
+                            <Phone className="w-10 h-10" />
                         </div>
-                        <h4 className="text-xl font-bold mb-2">WhatsApp</h4>
-                        <p className="text-primary font-bold text-lg">+33 6 00 00 00 00</p>
+                        <h4 className="text-xl font-bold mb-2">Téléphone</h4>
+                        <p className="text-primary font-bold text-lg">+216 44785090</p>
                     </div>
+                </div>
+
+                {/* Contact Form */}
+                <div className="mb-16">
+                    <ContactForm />
                 </div>
 
                 <div className="bg-primary/5 p-10 md:p-16 rounded-[2.5rem] text-center border border-primary/10">

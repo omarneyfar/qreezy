@@ -17,7 +17,7 @@ export default function DevisPage() {
                     title="Demander un Devis"
                     subtitle="Dites-nous en plus sur votre établissement et les outils Qreezy qui vous intéressent. Nous vous préparerons une proposition personnalisée."
                 />
-                <div className="mt-12 bg-white p-8 md:p-12 rounded-[2.5rem] border border-border shadow-sm">
+                <div className="mt-12">
                     <QuoteForm />
                 </div>
             </div>

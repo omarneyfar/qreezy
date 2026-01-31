@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -72,35 +73,54 @@ const Navbar = () => {
 
                 {/* Mobile Navigation */}
                 <div className="lg:hidden flex items-center">
-                    <Sheet>
+                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="relative z-[60]">
                                 <Menu className="w-6 h-6" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-full sm:w-[350px] p-0">
-                            <SheetHeader className="p-6 border-b text-left">
-                                <SheetTitle className="text-primary font-bold">Menu</SheetTitle>
+                        <SheetContent
+                            side="right"
+                            className="w-full sm:w-[420px] p-0"
+                        >
+                            <SheetHeader className="p-6 border-b text-left flex flex-row items-center">
+                                <SheetTitle></SheetTitle>
+                                <Image
+                                    src="/logo-header.png"
+                                    alt="Qreezy Logo"
+                                    width={100}
+                                    height={34}
+                                    className="object-contain"
+                                />
                             </SheetHeader>
-                            <nav className="flex flex-col p-6 gap-6">
+                            <nav className="flex flex-col p-6">
                                 {SITE_CONFIG.navItems.map((item) => {
                                     const isActive = pathname === item.href;
                                     return (
                                         <Link
                                             key={item.href}
                                             href={item.href}
+                                            onClick={() => setIsOpen(false)}
                                             className={cn(
-                                                "text-xl font-bold transition-colors",
-                                                isActive ? "text-primary border-l-4 border-primary pl-4" : "text-foreground pl-4"
+                                                "py-4 text-base font-medium transition-colors border-b border-border/50 last:border-0",
+                                                isActive
+                                                    ? "text-primary font-semibold"
+                                                    : "text-foreground hover:text-primary"
                                             )}
                                         >
                                             {item.label}
                                         </Link>
                                     );
                                 })}
-                                <div className="mt-4 px-4">
-                                    <Button asChild className="w-full font-bold h-12 rounded-xl text-lg">
-                                        <Link href="/devis">Demander un Devis</Link>
+                                <div className="mt-8">
+                                    <Button
+                                        asChild
+                                        className="w-full font-semibold h-12 rounded-lg text-base"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <Link href="/devis">
+                                            Demander un Devis
+                                        </Link>
                                     </Button>
                                 </div>
                             </nav>
