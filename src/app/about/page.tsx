@@ -2,12 +2,19 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FeatureCard from "@/components/ui/FeatureCard";
 import { Users, Rocket, Palette } from "lucide-react";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "À propos",
-    description: "Découvrez la mission de Qreezy : combler le fossé entre le monde physique et le numérique.",
-};
+export const metadata = generateSEOMetadata({
+    title: "À propos de Qreezy | Entreprise Tech Tunisie",
+    description: "Qreezy: startup tunisienne spécialisée dans les solutions digitales pour restaurants. Notre mission: moderniser la restauration avec la technologie QR.",
+    keywords: [
+        "Qreezy entreprise",
+        "startup Tunisie",
+        "solutions digitales Tunis",
+        "entreprise tech restauration",
+    ],
+    canonical: "/about",
+});
 
 export default function AboutPage() {
     return (

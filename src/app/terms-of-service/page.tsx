@@ -1,11 +1,18 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Conditions Générales",
-    description: "Conditions d'utilisation des services Qreezy.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Conditions Générales d'Utilisation | CGU Qreezy",
+    description: "Conditions générales d'utilisation des services Qreezy. Termes et conditions pour l'utilisation du menu digital et programme fidélité.",
+    keywords: [
+        "CGU Qreezy",
+        "conditions utilisation menu digital",
+        "termes service restaurant",
+    ],
+    canonical: "/terms-of-service",
+    noindex: false,
+});
 
 export default function TermsOfService() {
     return (

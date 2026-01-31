@@ -7,6 +7,21 @@ import ClientCard from "@/components/ui/ClientCard";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, TrendingDown, FileText, Smartphone, Utensils, Heart, ArrowRight } from "lucide-react";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+
+export const metadata = generateSEOMetadata({
+  title: "Solutions Digitales pour Restaurants | Menu QR & Fidélité Tunisie",
+  description: "Qreezy: Menu digital QR code et programme de fidélité pour restaurants en Tunisie. Modernisez votre établissement, boostez vos ventes. Devis gratuit!",
+  keywords: [
+    "Qreezy",
+    "menu digital restaurant Tunisie",
+    "QR code menu",
+    "programme fidélité restaurant",
+    "solutions digitales restaurants",
+    "digitalisation restaurant Tunis",
+  ],
+  canonical: "/",
+});
 
 export default function Home() {
   return (

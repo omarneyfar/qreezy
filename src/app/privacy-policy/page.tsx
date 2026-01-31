@@ -1,11 +1,18 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Politique de Confidentialité",
-    description: "Comment nous gérons vos données chez Qreezy.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Politique de Confidentialité | Protection des Données",
+    description: "Politique de confidentialité Qreezy. Découvrez comment nous protégeons vos données personnelles et respectons le RGPD.",
+    keywords: [
+        "politique confidentialité Qreezy",
+        "protection données restaurant",
+        "RGPD Tunisie",
+    ],
+    canonical: "/privacy-policy",
+    noindex: false,
+});
 
 export default function PrivacyPolicy() {
     return (

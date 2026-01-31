@@ -3,12 +3,19 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import CTA from "@/components/ui/CTA";
 import { ClipboardList, Code, MapPin, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Comment ça marche",
-    description: "Découvrez comment nous intégrons les outils Qreezy dans votre entreprise, de l'audit au lancement.",
-};
+export const metadata = generateSEOMetadata({
+    title: "Comment ça marche | Installation Menu Digital Tunisie",
+    description: "Découvrez comment Qreezy intègre le menu digital et programme fidélité dans votre restaurant. 4 étapes simples: consultation, intégration, déploiement, lancement.",
+    keywords: [
+        "comment installer menu digital",
+        "intégration QR code restaurant",
+        "mise en place menu numérique",
+        "déploiement menu digital Tunisie",
+    ],
+    canonical: "/how-it-works",
+});
 
 export default function HowItWorks() {
     const steps = [

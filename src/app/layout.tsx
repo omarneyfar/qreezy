@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     siteName: 'Qreezy',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://qreezy.tn/og-image.png',
         width: 512,
         height: 512,
         alt: 'Qreezy - Solutions Digitales pour Restaurants',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
     description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité.',
-    images: ['/og-image.png'],
+    images: ['https://qreezy.tn/og-image.png'],
     creator: '@qreezy',
   },
   alternates: {
@@ -117,7 +117,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="grow pt-20">
           {children}
         </main>
         <Footer />
