@@ -10,10 +10,24 @@ export const metadata = generateSEOMetadata({
     title: "Contact Qreezy Tunisie | Demander un Devis Menu Digital",
     description: "Contactez Qreezy en Tunisie pour vos solutions de menu digital et fidélité. Email: contact@qreezy.tn | Tél: +216 44785090. Réponse sous 24h.",
     keywords: [
+        // French - Contact & Location
         "contact Qreezy",
-        "devis menu digital Tunisie",
-        "contact restaurant digital",
         "Qreezy Tunisie",
+        "contact restaurant digital",
+        "support Qreezy",
+        // French - Action & Service
+        "devis menu digital Tunisie",
+        "demander devis restaurant digital",
+        "contacter Qreezy Tunis",
+        "assistance menu digital",
+        "service client Qreezy",
+        // English
+        "contact Qreezy Tunisia",
+        "digital menu quote",
+        "restaurant solutions Tunisia",
+        // Local SEO
+        "Qreezy Tunis adresse",
+        "téléphone Qreezy Tunisie",
     ],
     canonical: "/contact",
 });

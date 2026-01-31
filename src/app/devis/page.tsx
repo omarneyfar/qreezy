@@ -7,10 +7,27 @@ export const metadata = generateSEOMetadata({
     title: "Demander un Devis | Prix Menu Digital et Fidélité Restaurant Tunisie",
     description: "Obtenez un devis gratuit pour votre menu digital QR code et programme de fidélité. Solutions personnalisées pour restaurants en Tunisie. Réponse sous 24h.",
     keywords: [
+        // French - Quote & Pricing
         "devis menu digital",
         "prix menu QR code",
         "tarif programme fidélité",
         "devis restaurant digital Tunisie",
+        "coût menu numérique",
+        "prix digitalisation restaurant",
+        // French - Action & Intent
+        "demander devis Qreezy",
+        "obtenir prix menu digital",
+        "devis gratuit menu QR",
+        "tarif solution digitale restaurant",
+        "estimation prix menu digital Tunisie",
+        // English
+        "digital menu pricing",
+        "QR menu cost",
+        "restaurant digitalization quote",
+        "get quote Tunisia",
+        // Conversion-focused
+        "essai gratuit menu digital",
+        "démo Qreezy",
     ],
     canonical: "/devis",
 });

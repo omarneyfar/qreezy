@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   },
   description: 'Solutions digitales pour restaurants en Tunisie: Menu QR code sans contact et programme de fidélité. Modernisez votre restaurant avec Qreezy.',
   keywords: [
+    // French - Primary Keywords
     'menu digital',
     'QR code restaurant',
     'carte numérique',
@@ -25,6 +26,33 @@ export const metadata: Metadata = {
     'restaurant Tunisie',
     'menu digital Tunisie',
     'Qreezy',
+    // French - Long-tail & User Intent
+    'comment créer menu digital restaurant',
+    'menu restaurant QR code prix',
+    'carte digitale restaurant Tunis',
+    'solution menu numérique Tunisie',
+    'digitalisation restaurant',
+    'moderniser restaurant Tunisie',
+    'menu interactif restaurant',
+    'programme fidélisation client',
+    'carte fidélité numérique',
+    // English - Primary Keywords
+    'digital menu',
+    'QR code menu',
+    'contactless menu',
+    'restaurant digital solutions',
+    'loyalty program restaurant',
+    'digital menu Tunisia',
+    // English - Long-tail
+    'QR menu for restaurants',
+    'digital menu software',
+    'restaurant QR code generator',
+    'contactless dining solutions',
+    'restaurant loyalty system',
+    // Location-based
+    'menu digital Tunis',
+    'restaurant digitalisé Tunisie',
+    'QR menu Tunis',
   ],
   authors: [{ name: 'Qreezy' }],
   creator: 'Qreezy',

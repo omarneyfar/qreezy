@@ -11,12 +11,33 @@ export const metadata = generateSEOMetadata({
     title: "Menu Digital QR Code pour Restaurant | Carte Sans Contact Tunisie",
     description: "Menu digital restaurant avec QR code en Tunisie. Carte numérique sans contact, mise à jour instantanée. Solution moderne pour cafés, restaurants et hôtels.",
     keywords: [
+        // French - Core
         "menu digital restaurant",
         "QR code menu",
         "carte numérique",
         "menu sans contact",
         "menu restaurant Tunisie",
         "carte digitale QR",
+        // French - Long-tail
+        "créer menu digital",
+        "menu QR code prix",
+        "menu digital pour restaurant Tunis",
+        "comment digitaliser menu restaurant",
+        "menu numérique mise à jour instantanée",
+        "remplacer menu papier",
+        "menu hygiénique sans contact",
+        // English
+        "digital menu restaurant",
+        "QR code menu Tunisia",
+        "contactless menu",
+        "digital restaurant menu software",
+        "QR menu maker",
+        // Location & Business Type
+        "menu digital café Tunisie",
+        "carte numérique hôtel",
+        "menu digital Tunis",
+        "menu",
+        "qr code",
     ],
     canonical: "/digital-menu",
 });

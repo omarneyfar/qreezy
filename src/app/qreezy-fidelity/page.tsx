@@ -11,11 +11,33 @@ export const metadata = generateSEOMetadata({
     title: "Programme Fidélité Digital pour Restaurant | Carte de Fidélité Tunisie",
     description: "Programme de fidélité numérique pour restaurants en Tunisie. Carte fidélité digitale sans application. Augmentez la rétention client et le panier moyen avec Qreezy Fidélité.",
     keywords: [
+        // French - Core
         "programme fidélité restaurant",
         "carte fidélité digitale",
         "fidélité client restaurant",
-        "loyalty program Tunisia",
         "programme points restaurant",
+        // French - Long-tail & Benefits
+        "augmenter fidélité client restaurant",
+        "système de récompense restaurant",
+        "carte fidélité numérique Tunisie",
+        "programme fidélité sans application",
+        "fidélisation client restauration",
+        "comment fidéliser clients restaurant",
+        "programme de points digital",
+        "carte cadeau digitale restaurant",
+        // English
+        "loyalty program Tunisia",
+        "digital loyalty card",
+        "restaurant loyalty system",
+        "customer retention restaurant",
+        "rewards program restaurant",
+        "loyalty app restaurant",
+        // Business Impact
+        "augmenter panier moyen restaurant",
+        "retour client fréquent",
+        "programme récompense Tunisie",
+        "fidelité",
+        "carte fidelité"
     ],
     canonical: "/qreezy-fidelity",
 });
