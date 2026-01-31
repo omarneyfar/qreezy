@@ -117,7 +117,7 @@ export default function Home() {
               Créez une communauté fidèle avec un programme de fidélité numérique. Récompensez vos meilleurs clients et incitez-les à revenir.
             </p>
             <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto px-10 h-14 rounded-xl font-bold text-lg bg-slate-100 hover:bg-primary hover:text-white transition-all text-foreground">
-              <Link href="/qreezy-fidelite">Explorer Fidélité</Link>
+              <Link href="/qreezy-fidelity">Explorer Fidélité</Link>
             </Button>
           </div>
         </div>

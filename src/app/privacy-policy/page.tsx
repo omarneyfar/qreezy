@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
                         <p>
                             Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification
                             et de suppression de vos données personnelles. Contactez-nous à
-                            contact@qreezy.com pour toute demande.
+                            contact@qreezy.tn pour toute demande.
                         </p>
                     </section>
                 </div>

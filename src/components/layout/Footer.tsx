@@ -21,7 +21,7 @@ const Footer = () => {
                         <h4 className="text-foreground font-bold text-lg">Solutions</h4>
                         <div className="flex flex-col gap-3">
                             <Link href="/digital-menu" className="text-secondary hover:text-primary transition-colors">Menu Digital</Link>
-                            <Link href="/qreezy-fidelite" className="text-secondary hover:text-primary transition-colors">Qreezy Fidélité</Link>
+                            <Link href="/qreezy-fidelity" className="text-secondary hover:text-primary transition-colors">Qreezy Fidélité</Link>
                         </div>
                     </div>
 
