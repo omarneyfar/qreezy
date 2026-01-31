@@ -73,7 +73,7 @@ export const siteConfig = {
     },
     social: {
         facebook: 'https://facebook.com/qreezy',
-        instagram: 'https://instagram.com/qreezy',
+        instagram: 'https://instagram.com/qreezy.tn',
         linkedin: 'https://linkedin.com/company/qreezy',
     },
 };

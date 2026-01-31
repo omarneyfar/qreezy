@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Instagram } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/config";
 
 const Footer = () => {
@@ -15,6 +16,15 @@ const Footer = () => {
                             <Image src="/logo-header.png" alt="Qreezy Logo" width={100} height={35} className="object-contain" />
                         </Link>
                         <p className="text-secondary text-base max-w-xs">{SITE_CONFIG.tagline}</p>
+                        <Link
+                            href="https://instagram.com/qreezy.tn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                        >
+                            <Instagram className="w-5 h-5" />
+                            <span>@qreezy.tn</span>
+                        </Link>
                     </div>
 
                     <div className="flex flex-col gap-5">

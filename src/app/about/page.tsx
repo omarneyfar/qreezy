@@ -1,7 +1,8 @@
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FeatureCard from "@/components/ui/FeatureCard";
-import { Users, Rocket, Palette } from "lucide-react";
+import Link from "next/link";
+import { Users, Rocket, Palette, Instagram } from "lucide-react";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
@@ -32,6 +33,15 @@ export default function AboutPage() {
                         que les grandes corporations—en commençant par l&apos;outil le plus puissant de
                         l&apos;interface physique-numérique : le code QR.
                     </p>
+                    <Link
+                        href="https://instagram.com/qreezy.tn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:opacity-90 transition-opacity font-semibold"
+                    >
+                        <Instagram className="w-5 h-5" />
+                        <span>Suivez-nous @qreezy.tn</span>
+                    </Link>
                 </div>
             </Section>
 
