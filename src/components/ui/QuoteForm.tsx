@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const QuoteForm = () => {
     const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -17,6 +18,8 @@ const QuoteForm = () => {
         e.preventDefault();
         setFormState("submitting");
         setErrorMessage("");
+
+        trackEvent(ANALYTICS_EVENTS.QUOTE_REQUEST_START);
 
         // Get form data
         const formData = new FormData(e.currentTarget);
@@ -50,10 +53,17 @@ const QuoteForm = () => {
             }
 
             setFormState("success");
+            trackEvent(ANALYTICS_EVENTS.QUOTE_REQUEST_SUCCESS, {
+                businessType: data.businessType,
+                solutionsCount: data.solutions.length
+            });
         } catch (error) {
             console.error("Error:", error);
             setFormState("error");
             setErrorMessage(error instanceof Error ? error.message : "Une erreur est survenue");
+            trackEvent(ANALYTICS_EVENTS.QUOTE_REQUEST_FAILURE, {
+                error: error instanceof Error ? error.message : "unknown"
+            });
         }
     };
 

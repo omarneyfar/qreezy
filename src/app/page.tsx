@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import FeatureCard from "@/components/ui/FeatureCard";
 import CTA from "@/components/ui/CTA";
 import ClientCard from "@/components/ui/ClientCard";
+import FAQ from "@/components/ui/FAQ";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, TrendingDown, FileText, Smartphone, Utensils, Heart, ArrowRight } from "lucide-react";
@@ -31,8 +32,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-8 md:pt-12 pb-16 md:pb-24">
           <div className="flex flex-col items-start text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-8">
-              La Nouvelle Ère du <br />
-              <span className="text-primary italic">Commerce Connecté</span>
+              Le Meilleur <span className="text-primary italic">Menu QR Code</span> & Fidélité en Tunisie
             </h1>
 
             <p className="text-lg md:text-xl text-secondary leading-relaxed mb-10">
@@ -60,7 +60,7 @@ export default function Home() {
             <div className="relative p-8 md:p-12 bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-border/50 animate-float max-w-md w-full">
               <Image
                 src="/logo.png"
-                alt="Qreezy Logo"
+                alt="Qreezy - Leader du Menu QR Code et Fidélité en Tunisie"
                 width={300}
                 height={67}
                 className="w-full h-auto object-contain"
@@ -75,8 +75,8 @@ export default function Home() {
       <Section dark>
         <SectionHeader
           centered
-          title="Les Défis des Entreprises"
-          subtitle="Les méthodes traditionnelles vous ralentissent. Nous vous aidons à surmonter les obstacles courants."
+          title="Pourquoi Digitaliser Votre Menu ?"
+          subtitle="Les méthodes traditionnelles vous ralentissent. Découvrez comment Qreezy résout les obstacles courants."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard
@@ -106,8 +106,8 @@ export default function Home() {
       <Section>
         <SectionHeader
           centered
-          title="Nos Solutions"
-          subtitle="Deux outils puissants conçus pour fonctionner ensemble ou indépendamment pour développer votre activité."
+          title="Nos Solutions Digitales"
+          subtitle="Deux outils puissants conçus pour développer votre activité : Menu QR Code et Programme de Fidélité."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex flex-col items-center text-center p-10 md:p-14 rounded-[2.5rem] bg-white border border-border shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-500 group">
@@ -142,8 +142,8 @@ export default function Home() {
       <Section dark>
         <SectionHeader
           centered
-          title="Approuvé par des Professionnels"
-          subtitle="Découvrez comment nos partenaires utilisent les outils Qreezy au quotidien."
+          title="Ils nous font Confiance"
+          subtitle="Découvrez pourquoi les meilleurs restaurants en Tunisie choisissent Qreezy."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <ClientCard
@@ -156,6 +156,9 @@ export default function Home() {
           />
         </div>
       </Section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Final CTA */}
       <Section className="pb-20">
