@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     <div className="flex flex-col gap-6">
                         <Link href="/" className="inline-block">
-                            <Image src="/logo-header.png" alt="Qreezy Logo" width={100} height={35} className="object-contain" />
+                            <Image src="/logo-header.png" alt="Qreezy - Menu Digital QR Code Tunisie" width={100} height={35} className="object-contain" />
                         </Link>
                         <p className="text-secondary text-base max-w-xs">{SITE_CONFIG.tagline}</p>
                         <Link
@@ -41,6 +41,15 @@ const Footer = () => {
                             <Link href="/about" className="text-secondary hover:text-primary transition-colors">À propos</Link>
                             <Link href="/contact" className="text-secondary hover:text-primary transition-colors">Contact</Link>
                             <Link href="/how-it-works" className="text-secondary hover:text-primary transition-colors">Comment ça marche</Link>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-5">
+                        <h4 className="text-foreground font-bold text-lg">Villes</h4>
+                        <div className="flex flex-col gap-3">
+                            <Link href="/solutions/tunis" className="text-secondary hover:text-primary transition-colors">Tunis</Link>
+                            <Link href="/solutions/sousse" className="text-secondary hover:text-primary transition-colors">Sousse</Link>
+                            <Link href="/solutions/sfax" className="text-secondary hover:text-primary transition-colors">Sfax</Link>
                         </div>
                     </div>
 

@@ -41,7 +41,7 @@ const Navbar = () => {
                 <Link href="/" className="relative z-[60] flex items-center shrink-0">
                     <Image
                         src="/logo-header.png"
-                        alt="Qreezy Logo"
+                        alt="Qreezy - Solution Menu QR Code Restaurant Tunisie"
                         width={120}
                         height={40}
                         className="object-contain"
@@ -87,7 +87,7 @@ const Navbar = () => {
                                 <SheetTitle></SheetTitle>
                                 <Image
                                     src="/logo-header.png"
-                                    alt="Qreezy Logo"
+                                    alt="Qreezy - Menu Digital et Fidélité Restaurant"
                                     width={100}
                                     height={34}
                                     className="object-contain"

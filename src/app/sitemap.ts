@@ -1,39 +1,40 @@
 import { MetadataRoute } from 'next';
+import { getAllCities } from '@/lib/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://qreezy.tn';
     const currentDate = new Date();
 
-    return [
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
             lastModified: currentDate,
-            changeFrequency: 'weekly',
+            changeFrequency: 'daily',
             priority: 1.0,
         },
         {
             url: `${baseUrl}/digital-menu`,
             lastModified: currentDate,
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/qreezy-fidelity`,
             lastModified: currentDate,
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/how-it-works`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/about`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.6,
         },
         {
             url: `${baseUrl}/contact`,
@@ -45,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/devis`,
             lastModified: currentDate,
             changeFrequency: 'weekly',
-            priority: 0.9,
+            priority: 1.0,
         },
         {
             url: `${baseUrl}/privacy-policy`,
@@ -60,4 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.3,
         },
     ];
+
+    const cityPages: MetadataRoute.Sitemap = getAllCities().map((city) => ({
+        url: `${baseUrl}/solutions/${city.slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    }));
+
+    return [...staticPages, ...cityPages];
 }

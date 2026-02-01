@@ -4,8 +4,8 @@ export const siteConfig = {
     name: 'Qreezy',
     url: 'https://qreezy.tn',
     locale: 'fr_TN',
-    title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
-    description: 'Solutions digitales pour restaurants: Menu QR code sans contact et programme de fidélité. Modernisez votre restaurant en Tunisie avec Qreezy.',
+    title: 'Menu QR Code & Fidélité Restaurant Tunisie | Solution Digitale | Qreezy',
+    description: 'Qreezy : Solution de Menu QR Code et Programme de Fidélité digital pour restaurants en Tunisie. Modernisez votre établissement et boostez vos ventes. Devis gratuit !',
     keywords: [
         // French - High-Value Competition Keywords
         'menu qr code',
@@ -180,6 +180,11 @@ export function generateMetadata({
         },
         alternates: {
             canonical: pageUrl,
+            languages: {
+                'fr-TN': `${siteConfig.url}/`,
+                'en-US': `${siteConfig.url}/en`,
+                'ar-TN': `${siteConfig.url}/ar`,
+            },
         },
         openGraph: {
             type: 'website',
@@ -203,6 +208,9 @@ export function generateMetadata({
             description: pageDescription,
             images: [pageOgImage],
             creator: '@qreezy',
+        },
+        verification: {
+            google: 'LtAUFdbyZhGMRNEZfk4axrEQeHmmRoFpIIeahl22Iw8',
         },
     };
 }
@@ -240,8 +248,10 @@ export const localBusinessSchema = {
     email: siteConfig.contact.email,
     address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Tunis, Tunisie',
         addressCountry: 'TN',
         addressLocality: 'Tunis',
+        postalCode: '1000',
     },
     geo: {
         '@type': 'GeoCoordinates',
@@ -252,7 +262,20 @@ export const localBusinessSchema = {
         '@type': 'Country',
         name: 'Tunisia',
     },
-    priceRange: '$$',
+    openingHoursSpecification: [
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '18:00',
+        },
+    ],
+    sameAs: [
+        siteConfig.social.facebook,
+        siteConfig.social.instagram,
+        siteConfig.social.linkedin,
+    ],
+    priceRange: 'TND',
     description: siteConfig.description,
 };
 
@@ -350,4 +373,114 @@ export const qrMenuSoftwareSchema = {
         ratingCount: '50',
     },
     description: 'Solution complète de menu digital QR code pour restaurants, cafés et hôtels en Tunisie. Créez votre menu numérique en quelques minutes.',
+};
+
+// New Schemas for Phase 1
+export const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    potentialAction: {
+        '@type': 'SearchAction',
+        target: `${siteConfig.url}/?s={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+    },
+};
+
+export const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Accueil',
+            item: siteConfig.url,
+        },
+    ],
+};
+
+export const webpageSchema = {
+    '@context': 'https://schema.org',
+    '@id': `${siteConfig.url}/#webpage`,
+    '@type': 'WebPage',
+    url: siteConfig.url,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    isPartOf: { '@id': `${siteConfig.url}/#website` },
+    breadcrumb: { '@id': `${siteConfig.url}/#breadcrumb` },
+    inLanguage: siteConfig.locale,
+};
+
+// Phase 2: FAQ and Product Schemas
+export const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'Comment créer un menu QR code pour mon restaurant ?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Avec Qreezy, vous pouvez créer votre menu QR code en quelques minutes. Inscrivez-vous, téléchargez votre menu ou ajoutez vos plats manuellement, et générez votre code QR unique à imprimer sur vos tables.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Quels sont les avantages d’un menu digital par rapport à un menu papier ?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Le menu digital réduit les coûts d’impression, permet des mises à jour instantanées des prix et des plats, améliore l’hygiène (sans contact) et offre une expérience client moderne et interactive.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Est-il possible de modifier le menu en temps réel ?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Oui, absolument. Toute modification effectuée sur votre tableau de bord Qreezy est instantanément visible par vos clients lorsqu’ils scannent le code QR, sans avoir à réimprimer quoi que ce soit.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Comment fonctionne le programme de fidélité Qreezy ?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Qreezy Fidélité permet à vos clients de cumuler des points via leur smartphone à chaque visite. C’est une solution 100% digitale qui remplace les cartes de fidélité en papier souvent perdues ou oubliées.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Quel est le prix du menu digital Qreezy en Tunisie ?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Qreezy propose des tarifs flexibles adaptés aux besoins des restaurateurs tunisiens. Contactez notre équipe pour un devis personnalisé et profitez d’un essai gratuit pour tester toutes nos fonctionnalités.',
+            },
+        },
+    ],
+};
+
+export const qreezyProductSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Qreezy Digital Menu & Loyalty Solution',
+    image: `${siteConfig.url}/logo.png`,
+    description: siteConfig.description,
+    brand: {
+        '@type': 'Brand',
+        name: siteConfig.name,
+    },
+    offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'TND',
+        lowPrice: '99',
+        highPrice: '500',
+        offerCount: '3',
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '120',
+    },
 };
