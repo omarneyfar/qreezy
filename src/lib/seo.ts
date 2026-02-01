@@ -4,8 +4,8 @@ export const siteConfig = {
     name: 'Qreezy',
     url: 'https://qreezy.tn',
     locale: 'fr_TN',
-    title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
-    description: 'Solutions digitales pour restaurants: Menu QR code sans contact et programme de fidélité. Modernisez votre restaurant en Tunisie avec Qreezy.',
+    title: 'Menu QR Code & Fidélité Restaurant Tunisie | Solution Digitale | Qreezy',
+    description: 'Qreezy : Solution de Menu QR Code et Programme de Fidélité digital pour restaurants en Tunisie. Modernisez votre établissement et boostez vos ventes. Devis gratuit !',
     keywords: [
         // French - High-Value Competition Keywords
         'menu qr code',
@@ -180,6 +180,11 @@ export function generateMetadata({
         },
         alternates: {
             canonical: pageUrl,
+            languages: {
+                'fr-TN': `${siteConfig.url}/`,
+                'en-US': `${siteConfig.url}/en`,
+                'ar-TN': `${siteConfig.url}/ar`,
+            },
         },
         openGraph: {
             type: 'website',
@@ -203,6 +208,9 @@ export function generateMetadata({
             description: pageDescription,
             images: [pageOgImage],
             creator: '@qreezy',
+        },
+        verification: {
+            google: 'LtAUFdbyZhGMRNEZfk4axrEQeHmmRoFpIIeahl22Iw8',
         },
     };
 }
@@ -350,4 +358,42 @@ export const qrMenuSoftwareSchema = {
         ratingCount: '50',
     },
     description: 'Solution complète de menu digital QR code pour restaurants, cafés et hôtels en Tunisie. Créez votre menu numérique en quelques minutes.',
+};
+
+// New Schemas for Phase 1
+export const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    potentialAction: {
+        '@type': 'SearchAction',
+        target: `${siteConfig.url}/?s={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+    },
+};
+
+export const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Accueil',
+            item: siteConfig.url,
+        },
+    ],
+};
+
+export const webpageSchema = {
+    '@context': 'https://schema.org',
+    '@id': `${siteConfig.url}/#webpage`,
+    '@type': 'WebPage',
+    url: siteConfig.url,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    isPartOf: { '@id': `${siteConfig.url}/#website` },
+    breadcrumb: { '@id': `${siteConfig.url}/#breadcrumb` },
+    inLanguage: siteConfig.locale,
 };
