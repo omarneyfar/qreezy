@@ -4,8 +4,8 @@ import QuoteForm from "@/components/ui/QuoteForm";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
-    title: "Demander un Devis | Prix Menu Digital et Fidélité Restaurant Tunisie",
-    description: "Obtenez un devis gratuit pour votre menu digital QR code et programme de fidélité. Solutions personnalisées pour restaurants en Tunisie. Réponse sous 24h.",
+    title: "Devis Menu QR Code Gratuit | Prix Solution Digital Restaurant | Qreezy",
+    description: "Demandez votre devis gratuit pour un Menu QR Code et Programme de Fidélité en Tunisie. Rapport qualité-prix imbattable pour restaurants, cafés et hôtels.",
     keywords: [
         // French - Quote & Pricing
         "devis menu digital",

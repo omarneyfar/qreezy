@@ -8,8 +8,8 @@ import { Smartphone, BarChart3, Mail, Lock, Heart, ArrowRight } from "lucide-rea
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
-    title: "Programme Fidélité Digital pour Restaurant | Carte de Fidélité Tunisie",
-    description: "Programme de fidélité numérique pour restaurants en Tunisie. Carte fidélité digitale sans application. Augmentez la rétention client et le panier moyen avec Qreezy Fidélité.",
+    title: "Programme Fidélité Digital Restaurant | Carte Fidélité QR Code | Qreezy",
+    description: "Boostez la rétention client avec notre Programme de Fidélité Digital en Tunisie. Carte fidélité QR code sans application, simple et efficace pour restaurants et cafés.",
     keywords: [
         // French - Core
         "programme fidélité restaurant",

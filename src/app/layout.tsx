@@ -10,7 +10,9 @@ import {
   qrMenuSoftwareSchema,
   websiteSchema,
   breadcrumbSchema,
-  webpageSchema
+  webpageSchema,
+  faqSchema,
+  qreezyProductSchema
 } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
@@ -141,6 +143,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(qreezyProductSchema) }}
         />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>

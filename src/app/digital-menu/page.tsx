@@ -8,8 +8,8 @@ import { Camera, Zap, Layout, Tag, Coffee, GlassWater, Utensils, Hotel, CheckCir
 import { generateMetadata as generateSEOMetadata, generateProductSchema } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
-    title: "Menu Digital QR Code pour Restaurant | Carte Sans Contact Tunisie",
-    description: "Menu digital restaurant avec QR code en Tunisie. Carte numérique sans contact, mise à jour instantanée. Solution moderne pour cafés, restaurants et hôtels.",
+    title: "Menu QR Code Restaurant | Carte Digital & Sans Contact | Qreezy",
+    description: "Digitalisez votre restaurant avec le meilleur Menu QR Code en Tunisie. Carte numérique sans contact, mise à jour instantanée et interface interactive pour vos clients.",
     keywords: [
         // French - Core
         "menu digital restaurant",
