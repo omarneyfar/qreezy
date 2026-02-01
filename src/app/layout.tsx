@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { organizationSchema, localBusinessSchema } from "@/lib/seo";
+import { organizationSchema, localBusinessSchema, digitalMenuServiceSchema, qrMenuSoftwareSchema } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
@@ -113,6 +113,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(digitalMenuServiceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(qrMenuSoftwareSchema) }}
         />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>

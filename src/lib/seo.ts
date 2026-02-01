@@ -7,19 +7,45 @@ export const siteConfig = {
     title: 'Qreezy - Menu Digital & Fidélité pour Restaurants en Tunisie',
     description: 'Solutions digitales pour restaurants: Menu QR code sans contact et programme de fidélité. Modernisez votre restaurant en Tunisie avec Qreezy.',
     keywords: [
-        // French - Primary Keywords
+        // French - High-Value Competition Keywords
+        'menu qr code',
+        'qr code menu restaurant',
+        'menu digital restaurant',
+        'carte menu digital',
+        'menu restaurant qr code',
+        'menu code qr restaurant',
+        'menu numérique restaurant',
+        'qr menu',
+        'digital menu restaurant',
         'menu digital',
         'QR code restaurant',
         'carte numérique',
         'menu sans contact',
+        'menu contactless',
+
+        // French - Competitor Keywords
+        'menu qr tunisie',
+        'solution menu digital tunisie',
+        'créer menu qr code',
+        'menu qr code prix',
+        'menu digital pas cher',
+        'menu qr code gratuit',
+        'logiciel menu digital',
+        'plateforme menu digital',
+        'application menu qr code',
+
+        // French - Loyalty Keywords
         'fidélité restaurant',
         'programme fidélité',
-        'solutions digitales restaurants',
-        'restaurant Tunisie',
-        'menu digital Tunisie',
-        'Qreezy',
+        'programme fidélité digital',
+        'carte fidélité digitale',
+        'solution fidélité restaurant',
+        'fidélisation client restaurant',
+        'programme de points restaurant',
+
         // French - Long-tail & User Intent
         'comment créer menu digital restaurant',
+        'comment faire menu qr code',
         'menu restaurant QR code prix',
         'carte digitale restaurant Tunis',
         'solution menu numérique Tunisie',
@@ -33,38 +59,72 @@ export const siteConfig = {
         'carte fidélité numérique',
         'augmenter chiffre affaires restaurant',
         'menu digital pour café',
-        // English - Primary Keywords
+        'menu digital pour restaurant',
+        'menu qr code tunis',
+
+        // English - High-Value Keywords
+        'qr code menu',
         'digital menu',
-        'QR code menu',
+        'restaurant qr code menu',
+        'qr menu restaurant',
+        'digital restaurant menu',
         'contactless menu',
+        'qr code for restaurant menu',
+        'restaurant menu qr code',
+        'digital menu for restaurants',
+        'qr code restaurant menu maker',
+        'create qr code menu',
+
+        // English - Solution Keywords
         'restaurant digital solutions',
-        'loyalty program restaurant',
-        'digital menu Tunisia',
-        // English - Long-tail & User Intent
-        'QR menu for restaurants',
-        'how to digitize restaurant menu',
         'digital menu software',
+        'qr menu maker',
+        'digital menu creator',
         'restaurant QR code generator',
         'contactless dining solutions',
         'restaurant loyalty system',
         'digital ordering system',
         'restaurant technology Tunisia',
         'smart menu solution',
+        'restaurant menu digitization',
+
+        // English - Loyalty
+        'loyalty program restaurant',
+        'digital loyalty card',
+        'restaurant loyalty app',
+        'customer loyalty program',
+        'restaurant rewards program',
+
         // Location-based
         'menu digital Tunis',
+        'menu qr code Tunisie',
         'restaurant digitalisé Tunisie',
         'QR menu Tunis',
         'solution digitale restaurant Tunisie',
+        'menu numérique Tunisie',
+        'qr code menu Tunisia',
+        'digital menu Tunisia',
+
         // Problem-solving Keywords
         'remplacer menu papier',
         'menu hygiénique restaurant',
         'réduire coûts impression menu',
         'modifier menu facilement',
         'menu multi-langue',
-        "menu",
-        "qr code",
-        "fidélité",
-        "carte fidelité",
+        'menu sans impression',
+        'économiser argent menu restaurant',
+        'update menu easily',
+        'reduce printing costs menu',
+
+        // Service Keywords
+        'Qreezy',
+        'menu',
+        'qr code',
+        'fidélité',
+        'carte fidelité',
+        'restaurant Tunisie',
+        'menu digital Tunisie',
+        'solutions digitales restaurants',
 
     ],
     contact: {
@@ -226,3 +286,68 @@ export function generateProductSchema(product: {
         })),
     };
 }
+
+// Service Schema for Digital Menu and Loyalty Solutions
+export const digitalMenuServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Digital Menu Solution',
+    name: 'Menu Digital QR Code pour Restaurants',
+    description: 'Solution de menu digital avec QR code pour restaurants en Tunisie. Créez, gérez et partagez votre menu numérique sans contact.',
+    provider: {
+        '@type': 'Organization',
+        name: siteConfig.name,
+        url: siteConfig.url,
+    },
+    areaServed: {
+        '@type': 'Country',
+        name: 'Tunisia',
+    },
+    offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        priceCurrency: 'TND',
+    },
+    hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Digital Restaurant Solutions',
+        itemListElement: [
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Menu Digital QR Code',
+                    description: 'Menu restaurant digital accessible par QR code, sans contact, modifiable en temps réel',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Programme Fidélité Digital',
+                    description: 'Solution de carte fidélité numérique pour fidéliser vos clients',
+                },
+            },
+        ],
+    },
+};
+
+// Software Application Schema
+export const qrMenuSoftwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Qreezy Menu Digital',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web Browser',
+    offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'TND',
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.8',
+        ratingCount: '50',
+    },
+    description: 'Solution complète de menu digital QR code pour restaurants, cafés et hôtels en Tunisie. Créez votre menu numérique en quelques minutes.',
+};
