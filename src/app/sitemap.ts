@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next';
+import { getAllCities } from '@/lib/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://qreezy.tn';
     const currentDate = new Date();
 
-    return [
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
             lastModified: currentDate,
@@ -60,4 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.3,
         },
     ];
+
+    const cityPages: MetadataRoute.Sitemap = getAllCities().map((city) => ({
+        url: `${baseUrl}/solutions/${city.slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    }));
+
+    return [...staticPages, ...cityPages];
 }

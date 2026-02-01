@@ -60,7 +60,7 @@ export default function Home() {
             <div className="relative p-8 md:p-12 bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-border/50 animate-float max-w-md w-full">
               <Image
                 src="/logo.png"
-                alt="Qreezy Logo"
+                alt="Qreezy - Leader du Menu QR Code et Fidélité en Tunisie"
                 width={300}
                 height={67}
                 className="w-full h-auto object-contain"

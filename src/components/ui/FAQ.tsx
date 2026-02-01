@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
+import { trackEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 interface FAQItem {
     question: string;
@@ -37,7 +38,14 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
+        const isOpening = openIndex !== index;
+        setOpenIndex(isOpening ? index : null);
+
+        if (isOpening) {
+            trackEvent(ANALYTICS_EVENTS.FAQ_ITEM_OPEN, {
+                question: faqData[index].question
+            });
+        }
     };
 
     return (
@@ -73,8 +81,8 @@ export default function FAQ() {
 
                         <div
                             className={`transition-all duration-300 ease-in-out ${openIndex === index
-                                    ? "max-h-[500px] opacity-100 pb-6 px-6"
-                                    : "max-h-0 opacity-0 pointer-events-none"
+                                ? "max-h-[500px] opacity-100 pb-6 px-6"
+                                : "max-h-0 opacity-0 pointer-events-none"
                                 }`}
                         >
                             <p className="text-secondary leading-relaxed">
