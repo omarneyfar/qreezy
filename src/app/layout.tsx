@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { organizationSchema, localBusinessSchema, digitalMenuServiceSchema, qrMenuSoftwareSchema } from "@/lib/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
@@ -129,6 +130,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
